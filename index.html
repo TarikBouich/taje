@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto-École Taj El Idrissi — Permis à Errachidia | 5 Agences Drâa-Tafilalet</title>
+<meta name="description" content="Auto-École Taj El Idrissi — Permis B, A, C à Errachidia, Goulmima, Rich, Erfoud & Rissani. Code en Darija & Français, 94% de réussite. Inscrivez-vous en 5 minutes." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="icon" href="logo.jpg" type="image/jpeg">
+<style>
+:root{
+  --bg-deep:#150b02;
+  --bg-brown:#241204;
+  --bg-brown2:#311a07;
+  --gold:#d4af37;
+  --gold-light:#f3d67c;
+  --gold-dark:#9a7a1a;
+  --cream:#fff9ec;
+  --cream-dim:#f3e8cf;
+  --ink:#131313;
+  --muted:#8a7a63;
+  --card:#ffffff;
+  --radius:22px;
+  --shadow:0 20px 60px rgba(0,0,0,.18);
+  --gold-grad:linear-gradient(135deg,#f9e79a 0%,#d4af37 28%,#a67c1a 52%,#f3d67c 75%,#d4af37 100%);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden;line-height:1.6}
+h1,h2,h3,.serif{font-family:'Cinzel',serif}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+.container{width:min(1200px,92%);margin:0 auto}
+section{padding:90px 0}
+
+/* Preloader */
+#loader{position:fixed;inset:0;background:radial-gradient(circle at 50% 30%,#3a2110,#150b02);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .6s,visibility .6s}
+#loader.hide{opacity:0;visibility:hidden}
+.loader-crown{font-size:42px;color:var(--gold);animation:float 2s ease-in-out infinite}
+.loader-bar{width:200px;height:3px;background:rgba(212,175,55,.2);border-radius:99px;overflow:hidden}
+.loader-bar span{display:block;height:100%;width:40%;background:var(--gold-grad);border-radius:99px;animation:load 1.1s infinite ease-in-out}
+@keyframes load{0%{transform:translateX(-100%)}100%{transform:translateX(500%)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Topbar */
+.topbar{background:#0f0701;color:#e9d9b6;font-size:13.5px;padding:9px 0;border-bottom:1px solid rgba(212,175,55,.25)}
+.topbar .container{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.topbar i{color:var(--gold);margin-right:7px}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(21,11,2,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.22)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand-logo{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.18),0 8px 20px rgba(0,0,0,.4);background:#000}
+.brand-fallback{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle,#000 55%,#1a1a1a);border:2px solid var(--gold);display:none;align-items:center;justify-content:center;color:var(--gold);font-family:'Cinzel';font-weight:700;font-size:20px}
+.brand-text{line-height:1.1}
+.brand-text strong{display:block;color:#fff;font-family:'Cinzel';font-size:18px;letter-spacing:.3px}
+.brand-text strong span{color:var(--gold)}
+.brand-text small{color:#cbb78a;font-size:12px;letter-spacing:2.2px;text-transform:uppercase}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{color:#f0e4c6;font-weight:600;font-size:15px;position:relative;padding:6px 0}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--gold-grad);transition:.3s;border-radius:99px}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;border-radius:99px;padding:14px 26px;font-size:15px;transition:.25s;border:0;cursor:pointer}
+.btn-gold{background:var(--gold-grad);color:#1d1204;box-shadow:0 10px 28px rgba(212,175,55,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(212,175,55,.45)}
+.btn-dark{background:#111;color:#fff;border:1px solid rgba(255,255,255,.12)}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid rgba(212,175,55,.6)}
+.btn-outline:hover{background:rgba(212,175,55,.12)}
+.btn-light{background:#fff;color:#1d1204}
+.burger{display:none;background:none;border:1px solid rgba(212,175,55,.4);color:var(--gold);width:46px;height:46px;border-radius:12px;font-size:20px;cursor:pointer}
+
+/* Hero */
+.hero{background:radial-gradient(1000px 500px at 85% 10%,rgba(212,175,55,.22),transparent 60%),radial-gradient(800px 500px at 10% 90%,rgba(212,175,55,.12),transparent 60%),linear-gradient(180deg,#1d0f03 0%,#150b02 60%,#0f0701 100%);color:#fff;padding:0;position:relative;overflow:hidden}
+.hero .container{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding:72px 0 70px}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);color:var(--gold-light);padding:9px 16px;border-radius:99px;font-size:13.5px;font-weight:700;letter-spacing:.2px;margin-bottom:20px}
+.hero-badge .dot{width:8px;height:8px;background:#2ecc71;border-radius:50%;box-shadow:0 0 0 6px rgba(46,204,113,.18);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(46,204,113,.22)}50%{box-shadow:0 0 0 9px rgba(46,204,113,.08)}}
+.hero h1{font-size:clamp(38px,5vw,60px);line-height:1.05;font-weight:700;margin-bottom:18px}
+.hero h1 em{font-style:normal;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{color:#d8c9a8;font-size:18px;max-width:560px;margin-bottom:28px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.hero-trust{display:flex;gap:26px;flex-wrap:wrap;align-items:center}
+.hero-trust .stars{color:var(--gold);letter-spacing:2px;font-size:15px}
+.hero-trust small{display:block;color:#b9a888;font-size:13px}
+.hero-trust strong{color:#fff;font-size:22px}
+.hero-card{position:relative}
+.hero-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(212,175,55,.4);box-shadow:0 30px 80px rgba(0,0,0,.5);background:#000}
+.hero-frame img{width:100%;height:520px;object-fit:cover;opacity:.92}
+.hero-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(15,7,1,.85) 100%)}
+.hero-overlay{position:absolute;left:20px;right:20px;bottom:20px;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.glass{background:rgba(255,255,255,.12);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:14px 16px;color:#fff}
+.glass strong{font-size:22px;display:block}
+.glass span{font-size:13px;opacity:.9}
+.float-card{position:absolute;z-index:3;background:#fff;color:#111;border-radius:18px;padding:12px 14px;display:flex;gap:12px;align-items:center;box-shadow:var(--shadow);animation:float 4s ease-in-out infinite}
+.float-1{top:22px;left:-18px}
+.float-2{bottom:120px;right:-14px;animation-delay:1.2s}
+.float-card .icon{width:44px;height:44px;border-radius:12px;background:var(--gold-grad);display:flex;align-items:center;justify-content:center;font-size:19px;color:#1d1204;flex-shrink:0}
+.float-card strong{font-size:14px;display:block;line-height:1.2}
+.float-card small{font-size:12.5px;color:#666}
+.pattern{position:absolute;inset:0;opacity:.06;background-image:radial-gradient(#d4af37 1.5px,transparent 1.5px);background-size:26px 26px;pointer-events:none}
+
+/* Marquee */
+.marquee{background:var(--gold-grad);padding:14px 0;overflow:hidden;white-space:nowrap;border-block:3px solid #0f0701}
+.marquee-track{display:inline-flex;gap:38px;animation:scroll 22s linear infinite;font-weight:800;color:#1d1204;font-size:15px;letter-spacing:.6px;text-transform:uppercase}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* Section head */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold-dark);font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12.5px;margin-bottom:12px}
+.eyebrow::before{content:'';width:32px;height:2px;background:var(--gold);border-radius:99px;display:inline-block}
+.sec-title{font-size:clamp(30px,3.6vw,46px);line-height:1.1;margin-bottom:14px}
+.sec-title span{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-sub{color:#6b5f4a;font-size:17px;max-width:680px}
+.dark-sec{background:linear-gradient(180deg,#150b02,#211105);color:#fff}
+.dark-sec .sec-sub{color:#cbbd9a}
+
+/* Services */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.svc{background:#fff;border-radius:var(--radius);padding:28px 26px;border:1px solid #eee0c2;position:relative;overflow:hidden;transition:.3s}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 50px rgba(62,33,8,.14);border-color:var(--gold)}
+.svc::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--gold-grad)}
+.svc-ico{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,#241204,#4a2b0e);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px}
+.svc h3{font-size:20px;margin-bottom:8px;font-family:'Plus Jakarta Sans';font-weight:800}
+.svc p{color:#6d6151;font-size:15px;margin-bottom:16px}
+.svc ul{list-style:none;margin-bottom:18px;display:grid;gap:8px}
+.svc ul li{font-size:14px;color:#3e362a;display:flex;gap:9px;align-items:flex-start}
+.svc ul li i{color:#1a8a3a;margin-top:4px;font-size:13px}
+.svc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #e6d6b3;padding-top:16px}
+.price{font-weight:800;font-size:18px}
+.price small{font-weight:600;color:#8a7a63;font-size:13px;display:block}
+.link-gold{color:var(--gold-dark);font-weight:800;font-size:14px}
+.link-gold:hover{text-decoration:underline}
+
+/* Steps + stats */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.steps{display:grid;gap:16px;margin-top:28px}
+.step{display:flex;gap:16px;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.25);border-radius:18px;padding:18px}
+.step-num{width:46px;height:46px;border-radius:50%;background:var(--gold-grad);color:#1d1204;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.step h4{margin-bottom:4px;font-size:16px}
+.step p{color:#cbbd9a;font-size:14.5px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
+.stat{background:#fff;border:1px solid #ead9b3;border-radius:18px;padding:22px;text-align:center}
+.stat strong{font-size:34px;font-family:'Cinzel';color:#2b1605;display:block}
+.stat strong em{color:var(--gold-dark);font-style:normal}
+.stat span{font-size:13.5px;color:#7a6e5a;font-weight:600}
+
+/* Locations */
+#agences{background:linear-gradient(180deg,#fff9ec 0%,#f7ecd2 100%)}
+.agence-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:30px 0 22px}
+.tab-btn{border:1.5px solid #dcc99a;background:#fff;padding:11px 18px;border-radius:99px;font-weight:700;font-size:14px;cursor:pointer;transition:.25s;color:#4a3a20;display:flex;gap:8px;align-items:center}
+.tab-btn i{color:var(--gold-dark)}
+.tab-btn.active,.tab-btn:hover{background:#1d1204;color:var(--gold-light);border-color:#1d1204}
+.agence-detail{display:grid;grid-template-columns:420px 1fr;background:#150b02;border-radius:26px;overflow:hidden;color:#fff;border:1px solid rgba(212,175,55,.3);box-shadow:0 30px 70px rgba(43,22,5,.25)}
+.agence-info{padding:34px 30px}
+.agence-info .city{display:inline-block;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.4);color:var(--gold-light);font-size:12.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:7px 13px;border-radius:99px;margin-bottom:14px}
+.agence-info h3{font-size:28px;margin-bottom:6px}
+.agence-info .addr{color:#cbbd9a;margin-bottom:20px;font-size:15px}
+.info-row{display:flex;gap:13px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:13px 14px;margin-bottom:11px}
+.info-row i{width:38px;height:38px;border-radius:10px;background:var(--gold-grad);color:#1d1204;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.info-row strong{display:block;font-size:14px}
+.info-row span,.info-row a{font-size:14px;color:#e8dcc0}
+.info-row a:hover{color:var(--gold-light)}
+.agence-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.agence-actions .btn{padding:12px 20px;font-size:14px;flex:1;justify-content:center;min-width:160px}
+.map-wrap{min-height:460px;position:relative;background:#000}
+.map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(1.05)}
+.map-badge{position:absolute;top:16px;left:16px;background:#111827e6;color:#fff;padding:10px 14px;border-radius:12px;font-size:13px;display:flex;gap:10px;align-items:center;z-index:2;border:1px solid rgba(212,175,55,.4)}
+.map-badge i{color:var(--gold)}
+.all-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
+.mini{background:#fff;border:1px solid #e6d5ac;border-radius:16px;padding:18px;text-align:left;cursor:pointer;transition:.25s}
+.mini:hover,.mini.active{border-color:var(--gold-dark);box-shadow:0 12px 30px rgba(0,0,0,.1);transform:translateY(-3px)}
+.mini strong{font-size:14.5px;display:block;margin:10px 0 4px}
+.mini span{font-size:13px;color:#7a6e5a;display:block;line-height:1.5}
+.mini .tel{color:#1d1204;font-weight:800;margin-top:8px;display:block;font-size:13.5px}
+.mini .tel i{color:var(--gold-dark)}
+
+/* Testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.testi{background:#fff;border-radius:20px;padding:26px;border:1px solid #eee0c2;position:relative}
+.testi .q{font-size:34px;color:var(--gold);line-height:1;font-family:'Cinzel'}
+.testi p{font-size:15px;color:#4a4438;margin:10px 0 18px}
+.testi-user{display:flex;gap:12px;align-items:center}
+.avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#241204,var(--gold-dark));color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.testi-user strong{font-size:14.5px;display:block}
+.testi-user small{color:#8a7a63;font-size:13px}
+.testi .stars{color:#e0a800;font-size:13px;letter-spacing:1px}
+
+/* FAQ */
+.faq-wrap{max-width:820px;margin:36px auto 0;display:grid;gap:12px}
+.faq{background:#fff;border:1px solid #e9dabd;border-radius:16px;overflow:hidden}
+.faq button{width:100%;background:none;border:0;padding:19px 22px;display:flex;justify-content:space-between;align-items:center;gap:14px;font-weight:800;font-size:16px;cursor:pointer;text-align:left;color:#241204}
+.faq button i{width:32px;height:32px;border-radius:50%;background:#241204;color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:.3s}
+.faq.open button i{transform:rotate(45deg)}
+.faq .a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq .a p{padding:0 22px 20px;color:#6b5f4a;font-size:15px}
+.faq.open{border-color:var(--gold)}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px;align-items:stretch}
+.contact-card{background:linear-gradient(135deg,#241204,#150b02);border:1px solid rgba(212,175,55,.3);border-radius:24px;padding:36px;color:#fff}
+.contact-card h3{font-size:26px;margin-bottom:10px}
+.contact-card p{color:#cbbd9a;margin-bottom:22px}
+.big-tel{display:flex;align-items:center;gap:16px;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.35);border-radius:16px;padding:16px;margin-bottom:12px}
+.big-tel i{font-size:26px;color:var(--gold)}
+.big-tel strong{font-size:22px;display:block}
+.big-tel small{color:#cbbd9a}
+.form-card{background:#fff;border-radius:24px;padding:36px;border:1px solid #ead9b3;box-shadow:var(--shadow)}
+.form-card h3{font-size:22px;margin-bottom:6px}
+.form-card p{color:#7a6e5a;font-size:14.5px;margin-bottom:20px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{margin-bottom:14px}
+.field label{font-size:13px;font-weight:700;display:block;margin-bottom:6px;color:#4a3a20}
+.field input,.field select,.field textarea{width:100%;border:1.5px solid #e6d5ac;border-radius:12px;padding:13px 14px;font-size:15px;font-family:inherit;background:#fffdf6;outline:none;transition:.2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-dark);box-shadow:0 0 0 4px rgba(212,175,55,.15)}
+.field textarea{min-height:110px;resize:vertical}
+
+/* Footer */
+footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid var(--gold)}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:30px;padding-bottom:40px}
+.foot-grid h4{color:#fff;margin-bottom:16px;font-size:16px}
+.foot-grid a,.foot-grid li{display:block;list-style:none;font-size:14.5px;margin-bottom:10px}
+.foot-grid a:hover{color:var(--gold-light)}
+.foot-bottom{border-top:1px solid rgba(212,175,55,.18);padding:20px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px}
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:40px;height:40px;border-radius:50%;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);margin:0}
+.socials a:hover{background:var(--gold);color:#1d1204}
+
+/* WhatsApp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:200;width:60px;height:60px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;color:#fff;font-size:30px;box-shadow:0 12px 30px rgba(37,211,102,.45);transition:.25s}
+.wa:hover{transform:scale(1.08)}
+.wa::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid #25d366;opacity:.5;animation:wa 1.8s infinite}
+@keyframes wa{to{transform:scale(1.25);opacity:0}}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:.7s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:1020px){
+  .hero .container{grid-template-columns:1fr;padding:46px 0}
+  .hero-frame img{height:380px}
+  .float-1{left:10px}.float-2{right:10px}
+  .services-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .split,.contact-grid{grid-template-columns:1fr}
+  .agence-detail{grid-template-columns:1fr}
+  .map-wrap{min-height:340px}
+  .all-grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  section{padding:62px 0}
+  .nav-links{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100dvh;background:#150b02;flex-direction:column;align-items:flex-start;padding:90px 30px;transition:.35s;box-shadow:-20px 0 60px rgba(0,0,0,.5)}
+  .nav-links.open{right:0}
+  .burger{display:block}
+  .nav-cta{display:none}
+  .services-grid,.testi-grid,.frow{grid-template-columns:1fr}
+  .all-grid{grid-template-columns:1fr 1fr}
+  .topbar .hide-m{display:none}
+  .hero-overlay{grid-template-columns:1fr}
+  .float-card{display:none}
+  .foot-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="loader">
+  <div class="loader-crown"><i class="fa-solid fa-crown"></i></div>
+  <div style="font-family:'Cinzel';color:#f3d67c;letter-spacing:2px;font-size:15px">TAJ EL IDRISSI</div>
+  <div class="loader-bar"><span></span></div>
+</div>
+
+<div class="topbar">
+  <div class="container">
+    <div><i class="fa-solid fa-location-dot"></i> 5 agences : Errachidia • Goulmima • Rich • Erfoud • Rissani <span class="hide-m">— Ouvert Lun–Sam 9h à 20h</span></div>
+    <div><i class="fa-solid fa-phone"></i> <a href="tel:+212522000000" style="color:#fff;font-weight:700">05 22 00 00 00</a> &nbsp; <span class="hide-m"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <a href="https://wa.me/212661000000" style="color:#fff">06 61 00 00 00</a></span></div>
+  </div>
+</div>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#accueil" class="brand">
+      <img src="logo.jpg" alt="Auto-École Taj El Idrissi" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="brand-fallback">TE</span>
+      <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small>Permis • Code • Conduite</small></span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#accueil" class="active">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#methode">Méthode</a>
+      <a href="#agences">Nos 5 Agences</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-gold nav-cta" style="display:none">S'inscrire</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <a href="#contact" class="btn btn-gold nav-cta" style="padding:11px 22px">S'inscrire <i class="fa-solid fa-arrow-right"></i></a>
+      <button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="accueil">
+  <div class="pattern"></div>
+  <div class="container">
+    <div>
+      <div class="hero-badge"><span class="dot"></span> Inscriptions ouvertes 2026 — Places limitées par agence</div>
+      <h1>Votre permis, <em>notre fierté royale.</em></h1>
+      <p class="lead">Rejoignez <strong style="color:#fff">+12 000 élèves</strong> formés avec succès. Code en Darija & Français, moniteurs certifiés, véhicules récents et <strong style="color:#fff">taux de réussite de 94%</strong> à l'examen.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-id-card"></i> Réserver ma place</a>
+        <a href="#agences" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> Trouver mon agence</a>
+      </div>
+      <div class="hero-trust">
+        <div><div class="stars">★★★★★</div><small><strong>4,9/5</strong> — 2 300+ avis Google</small></div>
+        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>94%</strong><small>Réussite au 1er passage</small></div>
+        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>5</strong><small>Agences au Maroc</small></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="float-card float-1"><div class="icon"><i class="fa-solid fa-circle-check"></i></div><div><strong>Permis obtenu !</strong><small>Salma B. — Agence Errachidia</small></div></div>
+      <div class="float-card float-2"><div class="icon"><i class="fa-solid fa-car"></i></div><div><strong>Prochain créneau</strong><small>Aujourd'hui 14h30 — 2 places</small></div></div>
+      <div class="hero-frame">
+        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200&auto=format&fit=crop" alt="Élève en conduite" onerror="this.src='logo.jpg'">
+        <div class="hero-overlay">
+          <div class="glass"><strong>⏱ 45 jours</strong><span>Délai moyen permis B</span></div>
+          <div class="glass"><strong>👨‍🏫 25 moniteurs</strong><span>Certifiés & patients</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee"><div class="marquee-track" id="marquee"></div></div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="eyebrow reveal">Nos services 2026</div>
+    <h2 class="sec-title reveal">Tout pour votre <span>permis, au même endroit</span></h2>
+    <p class="sec-sub reveal">Du code à la conduite, en manuel ou automatique. Formations en français, arabe & darija, avec suivi sur WhatsApp et dossier administratif pris en charge.</p>
+    <div class="services-grid">
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-car-side"></i></div>
+        <h3>Permis B — Voiture</h3>
+        <p>La formation star : 20h de conduite + code illimité, véhicule manuel ou automatique.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Code en salle + application 2026</li><li><i class="fa-solid fa-check"></i> 20 séances + examen blanc</li><li><i class="fa-solid fa-check"></i> Dossier & examen inclus</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>3 500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-motorcycle"></i></div>
+        <h3>Permis A — Moto</h3>
+        <p>Maîtrisez la moto en toute sécurité avec piste privée et équipement fourni.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Plateau + circulation</li><li><i class="fa-solid fa-check"></i> Casque & gants fournis</li><li><i class="fa-solid fa-check"></i> Moto école récente</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>2 800 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-truck"></i></div>
+        <h3>Permis C / EC — Pro</h3>
+        <p>Devenez chauffeur professionnel : poids lourd, remorque, FIMO & carte conducteur.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Camion + remorque école</li><li><i class="fa-solid fa-check"></i> Formation pro accélérée</li><li><i class="fa-solid fa-check"></i> Aide à l'emploi</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>6 500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Code de la route</h3>
+        <p>Cours du soir, weekend & en ligne. Explications en Darija, QCM comme à l'examen.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Accès app 1 500 questions</li><li><i class="fa-solid fa-check"></i> Examens blancs illimités</li><li><i class="fa-solid fa-check"></i> Cours en Darija / Français</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>800 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-rotate"></i></div>
+        <h3>Recyclage & Perfectionnement</h3>
+        <p>Vous avez le permis mais peur de conduire ? 5 à 10h pour reprendre confiance.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Parking, autoroute, nuit</li><li><i class="fa-solid fa-check"></i> Moniteur dédié & patient</li><li><i class="fa-solid fa-check"></i> Voiture auto disponible</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>150 DH / h</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ico"><i class="fa-solid fa-file-lines"></i></div>
+        <h3>Dossier & Équivalence</h3>
+        <p>Renouvellement, duplicata, conversion permis étranger — on s'occupe de tout.</p>
+        <ul><li><i class="fa-solid fa-check"></i> Suivi administratif complet</li><li><i class="fa-solid fa-check"></i> Visite médicale partenaire</li><li><i class="fa-solid fa-check"></i> Réponse sous 24h</li></ul>
+        <div class="svc-foot"><div class="price"><small>À partir de</small>500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METHODE -->
+<section id="methode" class="dark-sec">
+  <div class="container">
+    <div class="split">
+      <div>
+        <div class="eyebrow reveal" style="color:var(--gold-light)">Méthode Taj El Idrissi</div>
+        <h2 class="sec-title reveal" style="color:#fff">Permis en main en <span>4 étapes simples</span></h2>
+        <p class="sec-sub reveal">Un parcours clair, sans stress, avec un conseiller dédié du premier appel jusqu'au jour de l'examen.</p>
+        <div class="steps">
+          <div class="step reveal"><div class="step-num">1</div><div><h4>Inscription en 5 min</h4><p>Passez en agence ou sur WhatsApp avec CIN + 2 photos. Facilités de paiement 3× sans frais.</p></div></div>
+          <div class="step reveal"><div class="step-num">2</div><div><h4>Code réussi en 2 semaines</h4><p>Cours + app avec examens blancs. On vous présente quand vous êtes prêt à 95%.</p></div></div>
+          <div class="step reveal"><div class="step-num">3</div><div><h4>20h de conduite</h4><p>Créneaux 7j/7 de 8h à 20h, prise à domicile possible, suivi après chaque séance.</p></div></div>
+          <div class="step reveal"><div class="step-num">4</div><div><h4>Examen & permis</h4><p>Véhicule de l'auto-école le jour J + accompagnement. 94% de réussite au 1er coup.</p></div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="hero-frame">
+          <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Voiture auto-école" style="height:560px">
+          <div class="hero-overlay">
+            <div class="glass"><strong>🎓 +12 000</strong><span>Permis délivrés</span></div>
+            <div class="glass"><strong>⭐ 4,9/5</strong><span>Satisfaction élèves</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat reveal"><strong><span data-count="12000">0</span><em>+</em></strong><span>Élèves formés depuis 2010</span></div>
+      <div class="stat reveal"><strong><span data-count="94">0</span><em>%</em></strong><span>Réussite au 1er passage</span></div>
+      <div class="stat reveal"><strong><span data-count="25">0</span><em></em></strong><span>Moniteurs certifiés</span></div>
+      <div class="stat reveal"><strong><span data-count="5">0</span><em></em></strong><span>Agences au Maroc</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENCES -->
+<section id="agences">
+  <div class="container">
+    <div class="eyebrow reveal">Nos 5 agences</div>
+    <h2 class="sec-title reveal">Choisissez <span>l'agence la plus proche</span></h2>
+    <p class="sec-sub reveal">Cliquez sur une agence pour voir sa carte, son téléphone, ses horaires et l'itinéraire direct. Toutes les agences proposent les mêmes formations et tarifs.</p>
+
+    <div class="agence-tabs reveal" id="tabs"></div>
+
+    <div class="agence-detail reveal" id="detail">
+      <div class="agence-info">
+        <span class="city" id="d-city">Errachidia</span>
+        <h3 id="d-name">Agence Errachidia</h3>
+        <p class="addr" id="d-addr"><i class="fa-solid fa-location-dot" style="color:var(--gold)"></i> —</p>
+        <div class="info-row"><i class="fa-solid fa-phone"></i><div><strong>Téléphone / WhatsApp</strong><a id="d-tel" href="#">—</a></div></div>
+        <div class="info-row"><i class="fa-solid fa-clock"></i><div><strong>Horaires</strong><span id="d-hours">Lun – Sam : 9h00 – 20h00<br>Dim : 10h00 – 13h00 (code uniquement)</span></div></div>
+        <div class="info-row"><i class="fa-solid fa-user-tie"></i><div><strong>Responsable</strong><span id="d-resp">—</span></div></div>
+        <div class="agence-actions">
+          <a class="btn btn-gold" id="d-call" href="#"><i class="fa-solid fa-phone"></i> Appeler</a>
+          <a class="btn btn-dark" id="d-wa" href="#" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp</a>
+          <a class="btn btn-light" id="d-dir" href="#" target="_blank" style="flex-basis:100%"><i class="fa-solid fa-diamond-turn-right"></i> Itinéraire Google Maps</a>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <div class="map-badge"><i class="fa-solid fa-location-dot"></i><span id="d-badge">Agence Errachidia</span></div>
+        <iframe id="d-map" title="Carte agence" loading="lazy" src=""></iframe>
+      </div>
+    </div>
+
+    <div class="all-grid" id="allGrid"></div>
+
+    <p style="margin-top:16px;font-size:13px;color:#8a7a63" class="reveal">⚠️ <strong>Modifiez facilement :</strong> adresses, téléphones et liens maps dans le tableau <code>AGENCES</code> en bas du fichier <code>index.html</code> (cherchez « MODIFIEZ VOS INFOS ICI »).</p>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section id="avis" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow reveal">Ils nous font confiance</div>
+    <h2 class="sec-title reveal">+2 300 avis <span>5 étoiles</span></h2>
+    <div class="testi-grid">
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Code réussi du premier coup grâce aux explications en Darija. Moniteur très patient, je recommande l'agence Errachidia les yeux fermés.</p><div class="testi-user"><div class="avatar">S</div><div><strong>Salma B. — Permis B</strong><small>Agence Errachidia</small></div></div></div>
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Après 10 ans sans conduire, 8h de recyclage et j'ai repris la route sereinement. Prise à domicile, tout était parfait.</p><div class="testi-user"><div class="avatar">Y</div><div><strong>Yassine E. — Recyclage</strong><small>Agence Goulmima</small></div></div></div>
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Paiement en 3 fois, dossier géré de A à Z, examen en 40 jours. Le suivi WhatsApp après chaque séance, c'est top.</p><div class="testi-user"><div class="avatar">K</div><div><strong>Khadija M. — Permis B Auto</strong><small>Agence Erfoud</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="padding-top:0">
+  <div class="container">
+    <div style="text-align:center;max-width:680px;margin:0 auto">
+      <div class="eyebrow reveal" style="justify-content:center">Questions fréquentes</div>
+      <h2 class="sec-title reveal">Tout ce que vous <span>devez savoir</span></h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq reveal"><button>Quels documents pour s'inscrire ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>CIN + 2 photos d'identité + certificat médical (nous avons un médecin partenaire à 150 DH). Le contrat et le reçu sont remis immédiatement.</p></div></div>
+      <div class="faq reveal"><button>En combien de temps aurai-je mon permis ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>En moyenne 30 à 45 jours pour le permis B si vous êtes assidu (2–3 séances/semaine). Formule accélérée possible en 3 semaines.</p></div></div>
+      <div class="faq reveal"><button>Quels sont les tarifs et facilités de paiement ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Permis B dès 3 500 DH, paiement en 3 fois sans frais. Code seul 800 DH. Devis écrit gratuit en agence ou sur WhatsApp.</p></div></div>
+      <div class="faq reveal"><button>Proposez-vous la boîte automatique ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Oui, dans nos 5 agences. Idéal pour la ville et les personnes stressées. Le permis reste valable pour les deux boîtes selon la réglementation en vigueur.</p></div></div>
+      <div class="faq reveal"><button>Puis-je changer d'agence en cours de formation ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Oui, gratuitement. Votre dossier et vos heures suivent automatiquement dans nos 5 agences grâce au suivi centralisé.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="dark-sec" style="border-top:3px solid var(--gold)">
+  <div class="container">
+    <div class="eyebrow reveal" style="color:var(--gold-light)">Inscription 2026</div>
+    <h2 class="sec-title reveal" style="color:#fff">Réservez votre place en <span>2 minutes</span></h2>
+    <p class="sec-sub reveal">Laissez vos coordonnées — un conseiller de l'agence la plus proche vous rappelle sous 1h ouvrée. Ou appelez directement.</p>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Parlez à un conseiller</h3>
+        <p>Devis gratuit, sans engagement. Réponse en français, arabe ou darija.</p>
+        <a class="big-tel" href="tel:+212522000000"><i class="fa-solid fa-phone-volume"></i><div><small>Numéro national — 7j/7 9h-20h</small><strong>05 22 00 00 00</strong></div></a>
+        <a class="big-tel" href="https://wa.me/212661000000" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp — réponse en 5 min</small><strong>06 61 00 00 00</strong></div></a>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+          <a href="#agences" class="btn btn-gold" style="flex:1;justify-content:center"><i class="fa-solid fa-location-dot"></i> Voir agences</a>
+          <a href="https://wa.me/212661000000?text=Bonjour%20Auto-%C3%89cole%20Taj%20El%20Idrissi%2C%20je%20veux%20m%27inscrire" target="_blank" class="btn btn-outline" style="flex:1;justify-content:center">Devis WhatsApp</a>
+        </div>
+        <p style="margin-top:20px;font-size:13.5px">📍 Siège : Boulevard Mohammed VI, Errachidia — RC 123456 • Agrément N° 789/2010</p>
+      </div>
+      <div class="form-card reveal">
+        <h3>Demande de rappel gratuit</h3>
+        <p>On vous rappelle sous 1h ouvrée. Vos données restent confidentielles.</p>
+        <form id="leadForm">
+          <div class="frow">
+            <div class="field"><label>Nom complet *</label><input required name="nom" placeholder="Ex : Salma Bennani"></div>
+            <div class="field"><label>Téléphone *</label><input required name="tel" inputmode="tel" placeholder="06 XX XX XX XX"></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label>Agence souhaitée *</label><select name="agence" id="agenceSelect" required></select></div>
+            <div class="field"><label>Formation *</label><select name="formation" required><option>Permis B — Voiture</option><option>Permis A — Moto</option><option>Permis C / EC — Pro</option><option>Code seul</option><option>Recyclage / Perfectionnement</option><option>Dossier / Équivalence</option></select></div>
+          </div>
+          <div class="field"><label>Message (optionnel)</label><textarea name="message" placeholder="Ex : je veux commencer ce weekend, boîte automatique…"></textarea></div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane"></i> Être rappelé(e) gratuitement</button>
+          <p id="formOk" style="display:none;margin-top:12px;background:#e8f8ee;border:1px solid #1a8a3a;color:#146c2e;padding:12px;border-radius:12px;font-size:14px;font-weight:600">✅ Merci ! Votre demande est envoyée. On vous appelle très vite. Pour aller plus vite : <a href="https://wa.me/212661000000" style="text-decoration:underline">WhatsApp direct</a>.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand" style="margin-bottom:14px">
+          <img src="logo.jpg" alt="logo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" onerror="this.style.display='none'">
+          <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small>L'excellence depuis 2010</small></span>
+        </div>
+        <p style="font-size:14px;max-width:340px">5 agences à Errachidia, Goulmima, Rich, Erfoud & Rissani, 25 moniteurs certifiés, +12 000 permis. Votre réussite est notre couronne 👑</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/212661000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div><h4>Formations</h4><a href="#services">Permis B voiture</a><a href="#services">Permis A moto</a><a href="#services">Permis C / EC pro</a><a href="#services">Code de la route</a><a href="#services">Recyclage</a></div>
+      <div><h4>Agences</h4><a href="#agences">Errachidia — Centre</a><a href="#agences">Goulmima — Centre</a><a href="#agences">Rich — Centre</a><a href="#agences">Erfoud — Centre</a><a href="#agences">Rissani — Centre</a></div>
+      <div><h4>Contact</h4><li>📞 05 22 00 00 00</li><li>💬 06 61 00 00 00</li><li>✉️ contact@tajelidrissi.ma</li><li>🕘 Lun–Sam 9h–20h</li></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 Auto-École Taj El Idrissi — Tous droits réservés.</span><span>Conçu avec 👑 à Errachidia, Maroc</span></div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/212661000000?text=Bonjour%20Taj%20El%20Idrissi%2C%20je%20veux%20des%20infos%20sur%20le%20permis" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+/* = ============================================================
+   MODIFIEZ VOS INFOS ICI — vos 5 vraies agences :
+   - name / city / addr : affichés sur la page
+   - tel : numéro affiché + utilisé pour Appeler (format +212...)
+   - wa : numéro WhatsApp sans + ni espaces (ex: 212661000000)
+   - resp : responsable d'agence
+   - query : texte recherché dans Google Maps (adresse exacte)
+   ============================================================ */
+const AGENCES = [
+  { name:"Agence Errachidia", city:"Errachidia", addr:"12, Boulevard Mohammed VI, Centre — Errachidia", tel:"+212535570101", telLabel:"05 35 57 01 01", wa:"212661570101", resp:"M. Yassine Idrissi", query:"Boulevard Mohammed VI Errachidia" },
+  { name:"Agence Goulmima", city:"Goulmima", addr:"45, Avenue Mohammed V, Centre — Goulmima", tel:"+212535580202", telLabel:"05 35 58 02 02", wa:"212661580202", resp:"Mme Salma Bennani", query:"Avenue Mohammed V Goulmima" },
+  { name:"Agence Rich", city:"Er-Rich", addr:"8, Route de Midelt, Centre — Rich", tel:"+212535580303", telLabel:"05 35 58 03 03", wa:"212661580303", resp:"M. Omar El Fassi", query:"Rich Errachidia Maroc" },
+  { name:"Agence Erfoud", city:"Erfoud", addr:"22, Avenue Moulay Ismail, Centre — Erfoud", tel:"+212535570404", telLabel:"05 35 57 04 04", wa:"212661570404", resp:"M. Karim Tazi", query:"Avenue Moulay Ismail Erfoud" },
+  { name:"Agence Rissani", city:"Rissani", addr:"15, Avenue Sijilmassa, Centre — Rissani", tel:"+212535570505", telLabel:"05 35 57 05 05", wa:"212661570505", resp:"Mme Khadija Amrani", query:"Avenue Sijilmassa Rissani" },
+];
+
+const tabsEl = document.getElementById('tabs');
+const gridEl = document.getElementById('allGrid');
+const selEl = document.getElementById('agenceSelect');
+let current = 0;
+
+function mapEmbed(q){ return "https://maps.google.com/maps?q="+encodeURIComponent(q)+"&z=16&output=embed"; }
+function mapLink(q){ return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(q); }
+
+function render(){
+  tabsEl.innerHTML = AGENCES.map((a,i)=>`<button class="tab-btn ${i===current?'active':''}" data-i="${i}"><i class="fa-solid fa-location-dot"></i> ${a.name}</button>`).join('');
+  gridEl.innerHTML = AGENCES.map((a,i)=>`<button class="mini ${i===current?'active':''}" data-i="${i}"><i class="fa-solid fa-store" style="color:var(--gold-dark);font-size:20px"></i><strong>${a.name}</strong><span>${a.addr}</span><span class="tel"><i class="fa-solid fa-phone"></i> ${a.telLabel}</span></button>`).join('');
+  if(!selEl.options.length){ selEl.innerHTML = AGENCES.map(a=>`<option>${a.name} — ${a.city}</option>`).join(''); }
+  [...tabsEl.children].forEach(b=>b.onclick=()=>{current=+b.dataset.i;render();});
+  [...gridEl.children].forEach(b=>b.onclick=()=>{current=+b.dataset.i;render();document.getElementById('detail').scrollIntoView({behavior:'smooth',block:'center'});});
+  const a = AGENCES[current];
+  document.getElementById('d-city').textContent = a.city;
+  document.getElementById('d-name').textContent = a.name;
+  document.getElementById('d-addr').innerHTML = '<i class="fa-solid fa-location-dot" style="color:var(--gold)"></i> '+a.addr;
+  document.getElementById('d-badge').textContent = a.name+' — '+a.city;
+  document.getElementById('d-resp').textContent = a.resp;
+  const tel = document.getElementById('d-tel'); tel.textContent = a.telLabel+'  •  WhatsApp'; tel.href = 'tel:'+a.tel;
+  document.getElementById('d-call').href = 'tel:'+a.tel;
+  document.getElementById('d-wa').href = 'https://wa.me/'+a.wa+'?text='+encodeURIComponent('Bonjour '+a.name+' (Taj El Idrissi), je veux des infos sur le permis');
+  document.getElementById('d-dir').href = mapLink(a.query);
+  document.getElementById('d-map').src = mapEmbed(a.query);
+}
+render();
+
+// Marquee
+const items = ["Permis B","Code Darija & Français","Boîte Auto","Permis Moto A","Permis Camion C","Recyclage","Paiement 3× sans frais","94% Réussite"];
+document.getElementById('marquee').innerHTML = [...items,...items].map(t=>`<span>👑 ${t}</span>`).join('');
+
+// Loader
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),600));
+setTimeout(()=>document.getElementById('loader').classList.add('hide'),2500);
+
+// Burger
+const burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks');
+burger.onclick=()=>navLinks.classList.toggle('open');
+navLinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navLinks.classList.remove('open'));
+
+// Reveal on scroll
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting) return; cio.unobserve(e.target);
+  const el=e.target, end=+el.dataset.count, t0=performance.now(), dur=1600;
+  (function tick(t){const p=Math.min((t-t0)/dur,1), v=Math.floor(end*(1-Math.pow(1-p,3))); el.textContent=v.toLocaleString('fr-FR'); if(p<1) requestAnimationFrame(tick);})(t0);
+}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+
+// FAQ
+document.querySelectorAll('.faq').forEach(f=>{
+  const btn=f.querySelector('button'), body=f.querySelector('.a');
+  btn.onclick=()=>{
+    const open=f.classList.contains('open');
+    document.querySelectorAll('.faq.open').forEach(o=>{o.classList.remove('open');o.querySelector('.a').style.maxHeight=null;});
+    if(!open){f.classList.add('open');body.style.maxHeight=body.scrollHeight+'px';}
+  };
+});
+
+// Form -> WhatsApp
+document.getElementById('leadForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  const msg=`Bonjour Taj El Idrissi 👑%0A%0ANom: ${encodeURIComponent(fd.get('nom'))}%0ATél: ${encodeURIComponent(fd.get('tel'))}%0AAgence: ${encodeURIComponent(fd.get('agence'))}%0AFormation: ${encodeURIComponent(fd.get('formation'))}%0AMessage: ${encodeURIComponent(fd.get('message')||'-')}`;
+  document.getElementById('formOk').style.display='block';
+  window.open('https://wa.me/212661000000?text='+msg,'_blank');
+});
+</script>
+</body>
+</html>
