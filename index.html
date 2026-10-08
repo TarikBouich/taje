@@ -7,7 +7,7 @@
 <meta name="description" content="Auto-École Taj El Idrissi — Permis B, A, C à Errachidia, Goulmima, Rich, Erfoud & Rissani. Code en Darija & Français, 94% de réussite. Inscrivez-vous en 5 minutes." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="icon" href="logo.jpg" type="image/jpeg">
 <style>
@@ -54,7 +54,7 @@ section{padding:90px 0}
 nav{position:sticky;top:0;z-index:100;background:rgba(21,11,2,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.22)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
 .brand{display:flex;align-items:center;gap:13px}
-.brand-logo{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(212,175,55,.18),0 8px 20px rgba(0,0,0,.4);background:#000}
+.brand-logo{width:58px;height:58px;border-radius:50%;object-fit:cover;border:0;box-shadow:0 8px 20px rgba(0,0,0,.4);background:#000}
 .brand-fallback{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle,#000 55%,#1a1a1a);border:2px solid var(--gold);display:none;align-items:center;justify-content:center;color:var(--gold);font-family:'Cinzel';font-weight:700;font-size:20px}
 .brand-text{line-height:1.1}
 .brand-text strong{display:block;color:#fff;font-family:'Cinzel';font-size:18px;letter-spacing:.3px}
@@ -72,6 +72,25 @@ nav{position:sticky;top:0;z-index:100;background:rgba(21,11,2,.92);backdrop-filt
 .btn-outline:hover{background:rgba(212,175,55,.12)}
 .btn-light{background:#fff;color:#1d1204}
 .burger{display:none;background:none;border:1px solid rgba(212,175,55,.4);color:var(--gold);width:46px;height:46px;border-radius:12px;font-size:20px;cursor:pointer}
+
+/* Lang switch */
+.lang-switch{display:inline-flex;background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);border-radius:99px;padding:3px;gap:3px}
+.lang-switch button{border:0;background:transparent;color:#e9d9b6;font-weight:800;font-size:13px;padding:7px 14px;border-radius:99px;cursor:pointer;transition:.2s;font-family:inherit}
+.lang-switch button.active{background:var(--gold-grad);color:#1d1204}
+html[dir="rtl"] body{letter-spacing:0}
+html[dir="rtl"] .eyebrow,html[dir="rtl"] .brand-text small{letter-spacing:.3px}
+html[dir="rtl"] .nav-links a::after{left:auto;right:0}
+html[dir="rtl"] .faq button,html[dir="rtl"] .field label{text-align:right}
+html[dir="rtl"] .svc ul li,html[dir="rtl"] .step,html[dir="rtl"] .info-row{flex-direction:row-reverse;text-align:right;justify-content:flex-end}
+html[dir="rtl"] body{font-family:'Cairo','Plus Jakarta Sans',system-ui,Tahoma,sans-serif}
+html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] .serif,html[dir="rtl"] .brand-text strong,html[dir="rtl"] .stat strong{font-family:'Cairo','Plus Jakarta Sans',system-ui,Tahoma,sans-serif}
+html[dir="rtl"] .hero-trust div[style]{border-left:0!important;border-right:1px solid rgba(212,175,55,.3);padding-left:0!important;padding-right:26px!important}
+/* Bidi: keep numbers / latin tokens LTR inside Arabic */
+bdi,.bdi{unicode-bidi:isolate;direction:ltr;display:inline-block}
+html[dir="rtl"] .big-tel strong,html[dir="rtl"] .mini .tel,html[dir="rtl"] .foot-grid li,html[dir="rtl"] .topbar a{direction:ltr;unicode-bidi:embed}
+html[dir="rtl"] .hero p.lead,html[dir="rtl"] .sec-sub,html[dir="rtl"] .testi p,html[dir="rtl"] .faq .a p{line-height:1.9}
+/* RTL: flip directional arrows (e.g. CTA → becomes ←) */
+html[dir="rtl"] .fa-arrow-right,html[dir="rtl"] .flip-arrow{display:inline-block;transform:scaleX(-1)}
 
 /* Hero */
 .hero{background:radial-gradient(1000px 500px at 85% 10%,rgba(212,175,55,.22),transparent 60%),radial-gradient(800px 500px at 10% 90%,rgba(212,175,55,.12),transparent 60%),linear-gradient(180deg,#1d0f03 0%,#150b02 60%,#0f0701 100%);color:#fff;padding:0;position:relative;overflow:hidden}
@@ -131,6 +150,9 @@ nav{position:sticky;top:0;z-index:100;background:rgba(21,11,2,.92);backdrop-filt
 .svc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px dashed #e6d6b3;padding-top:16px}
 .price{font-weight:800;font-size:18px}
 .price small{font-weight:600;color:#8a7a63;font-size:13px;display:block}
+/* Prices hidden (FR & AR) */
+.svc-foot .price{display:none}
+.svc-foot{justify-content:flex-end}
 .link-gold{color:var(--gold-dark);font-weight:800;font-size:14px}
 .link-gold:hover{text-decoration:underline}
 
@@ -237,6 +259,7 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 /* Reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:.7s ease}
 .reveal.visible{opacity:1;transform:none}
+.nav-scrim{display:none}
 
 /* Responsive */
 @media(max-width:1020px){
@@ -252,13 +275,41 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
   .stats{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
-  section{padding:62px 0}
-  .nav-links{position:fixed;top:0;right:-100%;width:min(320px,85vw);height:100dvh;background:#150b02;flex-direction:column;align-items:flex-start;padding:90px 30px;transition:.35s;box-shadow:-20px 0 60px rgba(0,0,0,.5)}
+  section{padding:56px 0}
+  /* Solid nav on mobile: backdrop-filter would trap position:fixed drawer inside nav */
+  nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:#150b02}
+  .nav-inner{gap:8px;padding:10px 0}
+  .brand{gap:9px}
+  .brand-logo{width:44px;height:44px}
+  .brand-text strong{font-size:14px}
+  .brand-text small{font-size:9.5px;letter-spacing:1.2px}
+  .lang-switch button{padding:6px 10px;font-size:12px}
+  .burger{width:42px;height:42px;font-size:18px;flex-shrink:0;position:relative;z-index:302}
+  .nav-links{position:fixed;top:0;right:-105%;width:min(320px,85vw);height:100dvh;background:#150b02;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:96px 28px 30px;transition:right .35s ease;box-shadow:-20px 0 60px rgba(0,0,0,.5);z-index:301;gap:6px;overflow-y:auto}
   .nav-links.open{right:0}
+  .nav-links a{font-size:17px;padding:12px 4px;border-bottom:1px solid rgba(212,175,55,.14)}
+  .nav-links a::after{display:none}
+  .nav-scrim{display:block;position:fixed;inset:0;background:rgba(10,5,1,.55);backdrop-filter:blur(2px);opacity:0;visibility:hidden;transition:.3s;z-index:300}
+  .nav-scrim.show{opacity:1;visibility:visible}
+  body.menu-open{overflow:hidden}
+  /* Drawer lives inside nav (z-index:100), so lift nav above the scrim when open */
+  body.menu-open nav{z-index:400}
   .burger{display:block}
   .nav-cta{display:none}
+  .topbar{font-size:12px}
+  .hero .container{padding:40px 0 46px;gap:34px}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center}
+  .hero-trust{gap:14px}
+  .hero-trust div[style]{padding-left:14px!important}
+  html[dir="rtl"] .hero-trust div[style]{padding-right:14px!important}
+  .hero-frame img{height:300px}
   .services-grid,.testi-grid,.frow{grid-template-columns:1fr}
   .all-grid{grid-template-columns:1fr 1fr}
+  .agence-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+  .tab-btn{flex-shrink:0}
+  .agence-info{padding:24px 20px}
+  .map-wrap{min-height:300px}
+  .contact-card,.form-card{padding:26px 22px}
   .topbar .hide-m{display:none}
   .hero-overlay{grid-template-columns:1fr}
   .float-card{display:none}
@@ -276,7 +327,7 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 
 <div class="topbar">
   <div class="container">
-    <div><i class="fa-solid fa-location-dot"></i> 5 agences : Errachidia • Goulmima • Rich • Erfoud • Rissani <span class="hide-m">— Ouvert Lun–Sam 9h à 20h</span></div>
+    <div><i class="fa-solid fa-location-dot"></i> <span data-i18n="topbar_agences">5 agences : Errachidia • Goulmima • Rich • Erfoud • Rissani</span> <span class="hide-m" data-i18n="topbar_hours">— Ouvert Lun–Sam 9h à 20h</span></div>
     <div><i class="fa-solid fa-phone"></i> <a href="tel:+212522000000" style="color:#fff;font-weight:700">05 22 00 00 00</a> &nbsp; <span class="hide-m"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <a href="https://wa.me/212661000000" style="color:#fff">06 61 00 00 00</a></span></div>
   </div>
 </div>
@@ -286,50 +337,55 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
     <a href="#accueil" class="brand">
       <img src="logo.jpg" alt="Auto-École Taj El Idrissi" class="brand-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
       <span class="brand-fallback">TE</span>
-      <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small>Permis • Code • Conduite</small></span>
+      <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small data-i18n="brand_sub">Permis • Code • Conduite</small></span>
     </a>
     <div class="nav-links" id="navLinks">
-      <a href="#accueil" class="active">Accueil</a>
-      <a href="#services">Services</a>
-      <a href="#methode">Méthode</a>
-      <a href="#agences">Nos 5 Agences</a>
-      <a href="#avis">Avis</a>
-      <a href="#contact">Contact</a>
-      <a href="#contact" class="btn btn-gold nav-cta" style="display:none">S'inscrire</a>
+      <a href="#accueil" class="active" data-i18n="nav_home">Accueil</a>
+      <a href="#services" data-i18n="nav_services">Services</a>
+      <a href="#methode" data-i18n="nav_method">Méthode</a>
+      <a href="#agences" data-i18n="nav_agencies">Nos 5 Agences</a>
+      <a href="#avis" data-i18n="nav_reviews">Avis</a>
+      <a href="#contact" data-i18n="nav_contact">Contact</a>
+      <a href="#contact" class="btn btn-gold nav-cta" style="display:none"><span data-i18n="nav_cta">S'inscrire</span></a>
     </div>
     <div style="display:flex;gap:10px;align-items:center">
-      <a href="#contact" class="btn btn-gold nav-cta" style="padding:11px 22px">S'inscrire <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="lang-switch" role="group" aria-label="Langue / اللغة">
+        <button type="button" data-lang-btn="fr" class="active">FR</button>
+        <button type="button" data-lang-btn="ar">عربي</button>
+      </div>
+      <a href="#contact" class="btn btn-gold nav-cta" style="padding:11px 22px"><span data-i18n="nav_cta">S'inscrire</span> <i class="fa-solid fa-arrow-right"></i></a>
       <button class="burger" id="burger" aria-label="Menu"><i class="fa-solid fa-bars"></i></button>
     </div>
   </div>
 </nav>
+<div class="nav-scrim" id="navScrim"></div>
 
 <!-- HERO -->
 <header class="hero" id="accueil">
   <div class="pattern"></div>
   <div class="container">
     <div>
-      <div class="hero-badge"><span class="dot"></span> Inscriptions ouvertes 2026 — Places limitées par agence</div>
-      <h1>Votre permis, <em>notre fierté royale.</em></h1>
-      <p class="lead">Rejoignez <strong style="color:#fff">+12 000 élèves</strong> formés avec succès. Code en Darija & Français, moniteurs certifiés, véhicules récents et <strong style="color:#fff">taux de réussite de 94%</strong> à l'examen.</p>
+      <div class="hero-badge"><span class="dot"></span> <span data-i18n="hero_badge">Inscriptions ouvertes 2026 — Places limitées par agence</span></div>
+      <h1 data-i18n="hero_title">Votre permis, <em>notre fierté royale.</em></h1>
+      <p class="lead" data-i18n="hero_lead">Rejoignez <strong style="color:#fff">+12 000 élèves</strong> formés avec succès. Code en Darija & Français, moniteurs certifiés, véhicules récents et <strong style="color:#fff">taux de réussite de 94%</strong> à l'examen.</p>
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-id-card"></i> Réserver ma place</a>
-        <a href="#agences" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> Trouver mon agence</a>
+        <a href="#contact" class="btn btn-gold"><i class="fa-solid fa-id-card"></i> <span data-i18n="hero_cta1">Réserver ma place</span></a>
+        <a href="#agences" class="btn btn-outline"><i class="fa-solid fa-location-dot"></i> <span data-i18n="hero_cta2">Trouver mon agence</span></a>
       </div>
       <div class="hero-trust">
-        <div><div class="stars">★★★★★</div><small><strong>4,9/5</strong> — 2 300+ avis Google</small></div>
-        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>94%</strong><small>Réussite au 1er passage</small></div>
-        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>5</strong><small>Agences au Maroc</small></div>
+        <div><div class="stars">★★★★★</div><small><strong data-i18n="hero_rate">4,9/5</strong> <span data-i18n="hero_reviews">— 2 300+ avis Google</span></small></div>
+        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>94%</strong><small data-i18n="hero_success">Réussite au 1er passage</small></div>
+        <div style="border-left:1px solid rgba(212,175,55,.3);padding-left:26px"><strong>5</strong><small data-i18n="hero_agencies">Agences au Maroc</small></div>
       </div>
     </div>
     <div class="hero-card">
-      <div class="float-card float-1"><div class="icon"><i class="fa-solid fa-circle-check"></i></div><div><strong>Permis obtenu !</strong><small>Tarik B. — Agence Errachidia</small></div></div>
-      <div class="float-card float-2"><div class="icon"><i class="fa-solid fa-car"></i></div><div><strong>Prochain créneau</strong><small>Aujourd'hui 14h30 — 2 places</small></div></div>
+      <div class="float-card float-1"><div class="icon"><i class="fa-solid fa-circle-check"></i></div><div><strong data-i18n="hero_float1_t">Permis obtenu !</strong><small data-i18n="hero_float1_s">Tarik B. — Agence Errachidia</small></div></div>
+      <div class="float-card float-2"><div class="icon"><i class="fa-solid fa-car"></i></div><div><strong data-i18n="hero_float2_t">Prochain créneau</strong><small data-i18n="hero_float2_s">Aujourd'hui 14h30 — 2 places</small></div></div>
       <div class="hero-frame">
         <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=1200&auto=format&fit=crop" alt="Élève en conduite" onerror="this.src='logo.jpg'">
         <div class="hero-overlay">
-          <div class="glass"><strong>⏱ 45 jours</strong><span>Délai moyen permis B</span></div>
-          <div class="glass"><strong>👨‍🏫 25 moniteurs</strong><span>Certifiés & patients</span></div>
+          <div class="glass"><strong data-i18n="hero_glass1_t">⏱ 45 jours</strong><span data-i18n="hero_glass1_s">Délai moyen permis B</span></div>
+          <div class="glass"><strong data-i18n="hero_glass2_t">👨‍🏫 25 moniteurs</strong><span data-i18n="hero_glass2_s">Certifiés & patients</span></div>
         </div>
       </div>
     </div>
@@ -340,51 +396,51 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
-    <div class="eyebrow reveal">Nos services 2026</div>
-    <h2 class="sec-title reveal">Tout pour votre <span>permis, au même endroit</span></h2>
-    <p class="sec-sub reveal">Du code à la conduite, en manuel ou automatique. Formations en français, arabe & darija, avec suivi sur WhatsApp et dossier administratif pris en charge.</p>
+    <div class="eyebrow reveal" data-i18n="svc_eyebrow">Nos services 2026</div>
+    <h2 class="sec-title reveal" data-i18n="svc_title">Tout pour votre <span>permis, au même endroit</span></h2>
+    <p class="sec-sub reveal" data-i18n="svc_sub">Du code à la conduite, en manuel ou automatique. Formations en français, arabe & darija, avec suivi sur WhatsApp et dossier administratif pris en charge.</p>
     <div class="services-grid">
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-car-side"></i></div>
-        <h3>Permis B — Voiture</h3>
-        <p>La formation star : 20h de conduite + code illimité, véhicule manuel ou automatique.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Code en salle + application 2026</li><li><i class="fa-solid fa-check"></i> 20 séances + examen blanc</li><li><i class="fa-solid fa-check"></i> Dossier & examen inclus</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>3 500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc1_t">Permis B — Voiture</h3>
+        <p data-i18n="svc1_d">La formation star : 20h de conduite + code illimité, véhicule manuel ou automatique.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc1_l1">Code en salle + application 2026</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc1_l2">20 séances + examen blanc</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc1_l3">Dossier & examen inclus</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_b">3 500 DH</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-motorcycle"></i></div>
-        <h3>Permis A — Moto</h3>
-        <p>Maîtrisez la moto en toute sécurité avec piste privée et équipement fourni.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Plateau + circulation</li><li><i class="fa-solid fa-check"></i> Casque & gants fournis</li><li><i class="fa-solid fa-check"></i> Moto école récente</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>2 800 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc2_t">Permis A — Moto</h3>
+        <p data-i18n="svc2_d">Maîtrisez la moto en toute sécurité avec piste privée et équipement fourni.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc2_l1">Plateau + circulation</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc2_l2">Casque & gants fournis</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc2_l3">Moto école récente</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_a">2 800 DH</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-truck"></i></div>
-        <h3>Permis C / EC — Pro</h3>
-        <p>Devenez chauffeur professionnel : poids lourd, remorque, FIMO & carte conducteur.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Camion + remorque école</li><li><i class="fa-solid fa-check"></i> Formation pro accélérée</li><li><i class="fa-solid fa-check"></i> Aide à l'emploi</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>6 500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc3_t">Permis C / EC — Pro</h3>
+        <p data-i18n="svc3_d">Devenez chauffeur professionnel : poids lourd, remorque, FIMO & carte conducteur.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc3_l1">Camion + remorque école</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc3_l2">Formation pro accélérée</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc3_l3">Aide à l'emploi</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_c">6 500 DH</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-book-open"></i></div>
-        <h3>Code de la route</h3>
-        <p>Cours du soir, weekend & en ligne. Explications en Darija, QCM comme à l'examen.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Accès app 1 500 questions</li><li><i class="fa-solid fa-check"></i> Examens blancs illimités</li><li><i class="fa-solid fa-check"></i> Cours en Darija / Français</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>800 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc4_t">Code de la route</h3>
+        <p data-i18n="svc4_d">Cours du soir, weekend & en ligne. Explications en Darija, QCM comme à l'examen.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc4_l1">Accès app 1 500 questions</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc4_l2">Examens blancs illimités</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc4_l3">Cours en Darija / Français</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_code">800 DH</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-rotate"></i></div>
-        <h3>Recyclage & Perfectionnement</h3>
-        <p>Vous avez le permis mais peur de conduire ? 5 à 10h pour reprendre confiance.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Parking, autoroute, nuit</li><li><i class="fa-solid fa-check"></i> Moniteur dédié & patient</li><li><i class="fa-solid fa-check"></i> Voiture auto disponible</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>150 DH / h</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc5_t">Recyclage & Perfectionnement</h3>
+        <p data-i18n="svc5_d">Vous avez le permis mais peur de conduire ? 5 à 10h pour reprendre confiance.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc5_l1">Parking, autoroute, nuit</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc5_l2">Moniteur dédié & patient</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc5_l3">Voiture auto disponible</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_r">150 DH / h</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
       <div class="svc reveal">
         <div class="svc-ico"><i class="fa-solid fa-file-lines"></i></div>
-        <h3>Dossier & Équivalence</h3>
-        <p>Renouvellement, duplicata, conversion permis étranger — on s'occupe de tout.</p>
-        <ul><li><i class="fa-solid fa-check"></i> Suivi administratif complet</li><li><i class="fa-solid fa-check"></i> Visite médicale partenaire</li><li><i class="fa-solid fa-check"></i> Réponse sous 24h</li></ul>
-        <div class="svc-foot"><div class="price"><small>À partir de</small>500 DH</div><a class="link-gold" href="#contact">S'inscrire →</a></div>
+        <h3 data-i18n="svc6_t">Dossier & Équivalence</h3>
+        <p data-i18n="svc6_d">Renouvellement, duplicata, conversion permis étranger — on s'occupe de tout.</p>
+        <ul><li><i class="fa-solid fa-check"></i> <span data-i18n="svc6_l1">Suivi administratif complet</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc6_l2">Visite médicale partenaire</span></li><li><i class="fa-solid fa-check"></i> <span data-i18n="svc6_l3">Réponse sous 24h</span></li></ul>
+        <div class="svc-foot"><div class="price"><small data-i18n="from">À partir de</small><span data-i18n="price_d">500 DH</span></div><a class="link-gold" href="#contact"><span data-i18n="register">S'inscrire</span> <span class="flip-arrow">→</span></a></div>
       </div>
     </div>
   </div>
@@ -395,31 +451,31 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
   <div class="container">
     <div class="split">
       <div>
-        <div class="eyebrow reveal" style="color:var(--gold-light)">Méthode Taj El Idrissi</div>
-        <h2 class="sec-title reveal" style="color:#fff">Permis en main en <span>4 étapes simples</span></h2>
-        <p class="sec-sub reveal">Un parcours clair, sans stress, avec un conseiller dédié du premier appel jusqu'au jour de l'examen.</p>
+        <div class="eyebrow reveal" style="color:var(--gold-light)" data-i18n="met_eyebrow">Méthode Taj El Idrissi</div>
+        <h2 class="sec-title reveal" style="color:#fff" data-i18n="met_title">Permis en main en <span>4 étapes simples</span></h2>
+        <p class="sec-sub reveal" data-i18n="met_sub">Un parcours clair, sans stress, avec un conseiller dédié du premier appel jusqu'au jour de l'examen.</p>
         <div class="steps">
-          <div class="step reveal"><div class="step-num">1</div><div><h4>Inscription en 5 min</h4><p>Passez en agence ou sur WhatsApp avec CIN + 2 photos. Facilités de paiement 3× sans frais.</p></div></div>
-          <div class="step reveal"><div class="step-num">2</div><div><h4>Code réussi en 2 semaines</h4><p>Cours + app avec examens blancs. On vous présente quand vous êtes prêt à 95%.</p></div></div>
-          <div class="step reveal"><div class="step-num">3</div><div><h4>20h de conduite</h4><p>Créneaux 7j/7 de 8h à 20h, prise à domicile possible, suivi après chaque séance.</p></div></div>
-          <div class="step reveal"><div class="step-num">4</div><div><h4>Examen & permis</h4><p>Véhicule de l'auto-école le jour J + accompagnement. 94% de réussite au 1er coup.</p></div></div>
+          <div class="step reveal"><div class="step-num">1</div><div><h4 data-i18n="step1_t">Inscription en 5 min</h4><p data-i18n="step1_d">Passez en agence ou sur WhatsApp avec CIN + 2 photos. Facilités de paiement 3× sans frais.</p></div></div>
+          <div class="step reveal"><div class="step-num">2</div><div><h4 data-i18n="step2_t">Code réussi en 2 semaines</h4><p data-i18n="step2_d">Cours + app avec examens blancs. On vous présente quand vous êtes prêt à 95%.</p></div></div>
+          <div class="step reveal"><div class="step-num">3</div><div><h4 data-i18n="step3_t">20h de conduite</h4><p data-i18n="step3_d">Créneaux 7j/7 de 8h à 20h, prise à domicile possible, suivi après chaque séance.</p></div></div>
+          <div class="step reveal"><div class="step-num">4</div><div><h4 data-i18n="step4_t">Examen & permis</h4><p data-i18n="step4_d">Véhicule de l'auto-école le jour J + accompagnement. 94% de réussite au 1er coup.</p></div></div>
         </div>
       </div>
       <div class="reveal">
         <div class="hero-frame">
           <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1200&auto=format&fit=crop" alt="Voiture auto-école" style="height:560px">
           <div class="hero-overlay">
-            <div class="glass"><strong>🎓 +12 000</strong><span>Permis délivrés</span></div>
-            <div class="glass"><strong>⭐ 4,9/5</strong><span>Satisfaction élèves</span></div>
+            <div class="glass"><strong data-i18n="met_glass1_t">🎓 +12 000</strong><span data-i18n="met_glass1_s">Permis délivrés</span></div>
+            <div class="glass"><strong data-i18n="met_glass2_t">⭐ 4,9/5</strong><span data-i18n="met_glass2_s">Satisfaction élèves</span></div>
           </div>
         </div>
       </div>
     </div>
     <div class="stats">
-      <div class="stat reveal"><strong><span data-count="12000">0</span><em>+</em></strong><span>Élèves formés depuis 2010</span></div>
-      <div class="stat reveal"><strong><span data-count="94">0</span><em>%</em></strong><span>Réussite au 1er passage</span></div>
-      <div class="stat reveal"><strong><span data-count="25">0</span><em></em></strong><span>Moniteurs certifiés</span></div>
-      <div class="stat reveal"><strong><span data-count="5">0</span><em></em></strong><span>Agences au Maroc</span></div>
+      <div class="stat reveal"><strong><span data-count="12000">0</span><em>+</em></strong><span data-i18n="stat1">Élèves formés depuis 2010</span></div>
+      <div class="stat reveal"><strong><span data-count="94">0</span><em>%</em></strong><span data-i18n="stat2">Réussite au 1er passage</span></div>
+      <div class="stat reveal"><strong><span data-count="25">0</span><em></em></strong><span data-i18n="stat3">Moniteurs certifiés</span></div>
+      <div class="stat reveal"><strong><span data-count="5">0</span><em></em></strong><span data-i18n="stat4">Agences au Maroc</span></div>
     </div>
   </div>
 </section>
@@ -427,9 +483,9 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 <!-- AGENCES -->
 <section id="agences">
   <div class="container">
-    <div class="eyebrow reveal">Nos 5 agences</div>
-    <h2 class="sec-title reveal">Choisissez <span>l'agence la plus proche</span></h2>
-    <p class="sec-sub reveal">Cliquez sur une agence pour voir sa carte, son téléphone, ses horaires et l'itinéraire direct. Toutes les agences proposent les mêmes formations et tarifs.</p>
+    <div class="eyebrow reveal" data-i18n="ag_eyebrow">Nos 5 agences</div>
+    <h2 class="sec-title reveal" data-i18n="ag_title">Choisissez <span>l'agence la plus proche</span></h2>
+    <p class="sec-sub reveal" data-i18n="ag_sub">Cliquez sur une agence pour voir sa carte, son téléphone, ses horaires et l'itinéraire direct. Toutes les agences proposent les mêmes formations et tarifs.</p>
 
     <div class="agence-tabs reveal" id="tabs"></div>
 
@@ -438,13 +494,13 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
         <span class="city" id="d-city">Errachidia</span>
         <h3 id="d-name">Agence Errachidia</h3>
         <p class="addr" id="d-addr"><i class="fa-solid fa-location-dot" style="color:var(--gold)"></i> —</p>
-        <div class="info-row"><i class="fa-solid fa-phone"></i><div><strong>Téléphone / WhatsApp</strong><a id="d-tel" href="#">—</a></div></div>
-        <div class="info-row"><i class="fa-solid fa-clock"></i><div><strong>Horaires</strong><span id="d-hours">Lun – Sam : 9h00 – 20h00<br>Dim : 10h00 – 13h00 (code uniquement)</span></div></div>
-        <div class="info-row"><i class="fa-solid fa-user-tie"></i><div><strong>Responsable</strong><span id="d-resp">—</span></div></div>
+        <div class="info-row"><i class="fa-solid fa-phone"></i><div><strong data-i18n="ag_tel">Téléphone / WhatsApp</strong><a id="d-tel" href="#">—</a></div></div>
+        <div class="info-row"><i class="fa-solid fa-clock"></i><div><strong data-i18n="ag_hours">Horaires</strong><span id="d-hours" data-i18n="ag_hours_v">Lun – Sam : 9h00 – 20h00<br>Dim : 10h00 – 13h00 (code uniquement)</span></div></div>
+        <div class="info-row"><i class="fa-solid fa-user-tie"></i><div><strong data-i18n="ag_resp">Responsable</strong><span id="d-resp">—</span></div></div>
         <div class="agence-actions">
-          <a class="btn btn-gold" id="d-call" href="#"><i class="fa-solid fa-phone"></i> Appeler</a>
-          <a class="btn btn-dark" id="d-wa" href="#" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> WhatsApp</a>
-          <a class="btn btn-light" id="d-dir" href="#" target="_blank" style="flex-basis:100%"><i class="fa-solid fa-diamond-turn-right"></i> Itinéraire Google Maps</a>
+          <a class="btn btn-gold" id="d-call" href="#"><i class="fa-solid fa-phone"></i> <span data-i18n="ag_call">Appeler</span></a>
+          <a class="btn btn-dark" id="d-wa" href="#" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25d366"></i> <span>WhatsApp</span></a>
+          <a class="btn btn-light" id="d-dir" href="#" target="_blank" style="flex-basis:100%"><i class="fa-solid fa-diamond-turn-right"></i> <span data-i18n="ag_dir">Itinéraire Google Maps</span></a>
         </div>
       </div>
       <div class="map-wrap">
@@ -455,19 +511,19 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 
     <div class="all-grid" id="allGrid"></div>
 
-    <p style="margin-top:16px;font-size:13px;color:#8a7a63" class="reveal">⚠️ <strong>Modifiez facilement :</strong> adresses, téléphones et liens maps dans le tableau <code>AGENCES</code> en bas du fichier <code>index.html</code> (cherchez « MODIFIEZ VOS INFOS ICI »).</p>
+    <p style="margin-top:16px;font-size:13px;color:#8a7a63" class="reveal" data-i18n="ag_note">⚠️ <strong>Modifiez facilement :</strong> adresses, téléphones et liens maps dans le tableau <code>AGENCES</code> en bas du fichier <code>index.html</code> (cherchez « MODIFIEZ VOS INFOS ICI »).</p>
   </div>
 </section>
 
 <!-- AVIS -->
 <section id="avis" style="padding-top:0">
   <div class="container">
-    <div class="eyebrow reveal">Ils nous font confiance</div>
-    <h2 class="sec-title reveal">+2 300 avis <span>5 étoiles</span></h2>
+    <div class="eyebrow reveal" data-i18n="rev_eyebrow">Ils nous font confiance</div>
+    <h2 class="sec-title reveal" data-i18n="rev_title">+2 300 avis <span>5 étoiles</span></h2>
     <div class="testi-grid">
-      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Code réussi du premier coup grâce aux explications en Darija. Moniteur très patient, je recommande l'agence Errachidia les yeux fermés.</p><div class="testi-user"><div class="avatar">T</div><div><strong>Tarik B. — Permis B</strong><small>Agence Errachidia</small></div></div></div>
-      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Après 10 ans sans conduire, 8h de recyclage et j'ai repris la route sereinement. Prise à domicile, tout était parfait.</p><div class="testi-user"><div class="avatar">Y</div><div><strong>Yassine E. — Recyclage</strong><small>Agence Goulmima</small></div></div></div>
-      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p>Paiement en 3 fois, dossier géré de A à Z, examen en 40 jours. Le suivi WhatsApp après chaque séance, c'est top.</p><div class="testi-user"><div class="avatar">K</div><div><strong>Khadija M. — Permis B Auto</strong><small>Agence Erfoud</small></div></div></div>
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p data-i18n="rev1_t">Code réussi du premier coup grâce aux explications en Darija. Moniteur très patient, je recommande l'agence Errachidia les yeux fermés.</p><div class="testi-user"><div class="avatar">T</div><div><strong data-i18n="rev1_n">Tarik B. — Permis B</strong><small data-i18n="rev1_a">Agence Errachidia</small></div></div></div>
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p data-i18n="rev2_t">Après 10 ans sans conduire, 8h de recyclage et j'ai repris la route sereinement. Prise à domicile, tout était parfait.</p><div class="testi-user"><div class="avatar">Y</div><div><strong data-i18n="rev2_n">Yassine E. — Recyclage</strong><small data-i18n="rev2_a">Agence Goulmima</small></div></div></div>
+      <div class="testi reveal"><div class="q">“</div><div class="stars">★★★★★</div><p data-i18n="rev3_t">Paiement en 3 fois, dossier géré de A à Z, examen en 40 jours. Le suivi WhatsApp après chaque séance, c'est top.</p><div class="testi-user"><div class="avatar">K</div><div><strong data-i18n="rev3_n">Khadija M. — Permis B Auto</strong><small data-i18n="rev3_a">Agence Erfoud</small></div></div></div>
     </div>
   </div>
 </section>
@@ -476,15 +532,15 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 <section id="faq" style="padding-top:0">
   <div class="container">
     <div style="text-align:center;max-width:680px;margin:0 auto">
-      <div class="eyebrow reveal" style="justify-content:center">Questions fréquentes</div>
-      <h2 class="sec-title reveal">Tout ce que vous <span>devez savoir</span></h2>
+      <div class="eyebrow reveal" style="justify-content:center" data-i18n="faq_eyebrow">Questions fréquentes</div>
+      <h2 class="sec-title reveal" data-i18n="faq_title">Tout ce que vous <span>devez savoir</span></h2>
     </div>
     <div class="faq-wrap">
-      <div class="faq reveal"><button>Quels documents pour s'inscrire ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>CIN + 2 photos d'identité + certificat médical (nous avons un médecin partenaire à 150 DH). Le contrat et le reçu sont remis immédiatement.</p></div></div>
-      <div class="faq reveal"><button>En combien de temps aurai-je mon permis ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>En moyenne 30 à 45 jours pour le permis B si vous êtes assidu (2–3 séances/semaine). Formule accélérée possible en 3 semaines.</p></div></div>
-      <div class="faq reveal"><button>Quels sont les tarifs et facilités de paiement ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Permis B dès 3 500 DH, paiement en 3 fois sans frais. Code seul 800 DH. Devis écrit gratuit en agence ou sur WhatsApp.</p></div></div>
-      <div class="faq reveal"><button>Proposez-vous la boîte automatique ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Oui, dans nos 5 agences. Idéal pour la ville et les personnes stressées. Le permis reste valable pour les deux boîtes selon la réglementation en vigueur.</p></div></div>
-      <div class="faq reveal"><button>Puis-je changer d'agence en cours de formation ? <i class="fa-solid fa-plus"></i></button><div class="a"><p>Oui, gratuitement. Votre dossier et vos heures suivent automatiquement dans nos 5 agences grâce au suivi centralisé.</p></div></div>
+      <div class="faq reveal"><button><span data-i18n="faq1_q">Quels documents pour s'inscrire ?</span> <i class="fa-solid fa-plus"></i></button><div class="a"><p data-i18n="faq1_a">CIN + 2 photos d'identité + certificat médical (nous avons un médecin partenaire à 150 DH). Le contrat et le reçu sont remis immédiatement.</p></div></div>
+      <div class="faq reveal"><button><span data-i18n="faq2_q">En combien de temps aurai-je mon permis ?</span> <i class="fa-solid fa-plus"></i></button><div class="a"><p data-i18n="faq2_a">En moyenne 30 à 45 jours pour le permis B si vous êtes assidu (2–3 séances/semaine). Formule accélérée possible en 3 semaines.</p></div></div>
+      <div class="faq reveal"><button><span data-i18n="faq3_q">Quels sont les tarifs et facilités de paiement ?</span> <i class="fa-solid fa-plus"></i></button><div class="a"><p data-i18n="faq3_a">Permis B dès 3 500 DH, paiement en 3 fois sans frais. Code seul 800 DH. Devis écrit gratuit en agence ou sur WhatsApp.</p></div></div>
+      <div class="faq reveal"><button><span data-i18n="faq4_q">Proposez-vous la boîte automatique ?</span> <i class="fa-solid fa-plus"></i></button><div class="a"><p data-i18n="faq4_a">Oui, dans nos 5 agences. Idéal pour la ville et les personnes stressées. Le permis reste valable pour les deux boîtes selon la réglementation en vigueur.</p></div></div>
+      <div class="faq reveal"><button><span data-i18n="faq5_q">Puis-je changer d'agence en cours de formation ?</span> <i class="fa-solid fa-plus"></i></button><div class="a"><p data-i18n="faq5_a">Oui, gratuitement. Votre dossier et vos heures suivent automatiquement dans nos 5 agences grâce au suivi centralisé.</p></div></div>
     </div>
   </div>
 </section>
@@ -492,36 +548,36 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
 <!-- CONTACT -->
 <section id="contact" class="dark-sec" style="border-top:3px solid var(--gold)">
   <div class="container">
-    <div class="eyebrow reveal" style="color:var(--gold-light)">Inscription 2026</div>
-    <h2 class="sec-title reveal" style="color:#fff">Réservez votre place en <span>2 minutes</span></h2>
-    <p class="sec-sub reveal">Laissez vos coordonnées — un conseiller de l'agence la plus proche vous rappelle sous 1h ouvrée. Ou appelez directement.</p>
+    <div class="eyebrow reveal" style="color:var(--gold-light)" data-i18n="ct_eyebrow">Inscription 2026</div>
+    <h2 class="sec-title reveal" style="color:#fff" data-i18n="ct_title">Réservez votre place en <span>2 minutes</span></h2>
+    <p class="sec-sub reveal" data-i18n="ct_sub">Laissez vos coordonnées — un conseiller de l'agence la plus proche vous rappelle sous 1h ouvrée. Ou appelez directement.</p>
     <div class="contact-grid">
       <div class="contact-card reveal">
-        <h3>Parlez à un conseiller</h3>
-        <p>Devis gratuit, sans engagement. Réponse en français, arabe ou darija.</p>
-        <a class="big-tel" href="tel:+212522000000"><i class="fa-solid fa-phone-volume"></i><div><small>Numéro national — 7j/7 9h-20h</small><strong>05 22 00 00 00</strong></div></a>
-        <a class="big-tel" href="https://wa.me/212661000000" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><small>WhatsApp — réponse en 5 min</small><strong>06 61 00 00 00</strong></div></a>
+        <h3 data-i18n="ct_card_t">Parlez à un conseiller</h3>
+        <p data-i18n="ct_card_d">Devis gratuit, sans engagement. Réponse en français, arabe ou darija.</p>
+        <a class="big-tel" href="tel:+212522000000"><i class="fa-solid fa-phone-volume"></i><div><small data-i18n="ct_tel_s">Numéro national — 7j/7 9h-20h</small><strong>05 22 00 00 00</strong></div></a>
+        <a class="big-tel" href="https://wa.me/212661000000" target="_blank"><i class="fa-brands fa-whatsapp"></i><div><small data-i18n="ct_wa_s">WhatsApp — réponse en 5 min</small><strong>06 61 00 00 00</strong></div></a>
         <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-          <a href="#agences" class="btn btn-gold" style="flex:1;justify-content:center"><i class="fa-solid fa-location-dot"></i> Voir agences</a>
-          <a href="https://wa.me/212661000000?text=Bonjour%20Auto-%C3%89cole%20Taj%20El%20Idrissi%2C%20je%20veux%20m%27inscrire" target="_blank" class="btn btn-outline" style="flex:1;justify-content:center">Devis WhatsApp</a>
+          <a href="#agences" class="btn btn-gold" style="flex:1;justify-content:center"><i class="fa-solid fa-location-dot"></i> <span data-i18n="ct_ag">Voir agences</span></a>
+          <a href="https://wa.me/212661000000?text=Bonjour%20Auto-%C3%89cole%20Taj%20El%20Idrissi%2C%20je%20veux%20m%27inscrire" target="_blank" class="btn btn-outline" style="flex:1;justify-content:center"><span data-i18n="ct_quote">Devis WhatsApp</span></a>
         </div>
-        <p style="margin-top:20px;font-size:13.5px">📍 Siège : Boulevard Mohammed VI, Errachidia — RC 123456 • Agrément N° 789/2010</p>
+        <p style="margin-top:20px;font-size:13.5px" data-i18n="ct_hq">📍 Siège : Boulevard Mohammed VI, Errachidia — RC 123456 • Agrément N° 789/2010</p>
       </div>
       <div class="form-card reveal">
-        <h3>Demande de rappel gratuit</h3>
-        <p>On vous rappelle sous 1h ouvrée. Vos données restent confidentielles.</p>
+        <h3 data-i18n="fm_t">Demande de rappel gratuit</h3>
+        <p data-i18n="fm_d">On vous rappelle sous 1h ouvrée. Vos données restent confidentielles.</p>
         <form id="leadForm">
           <div class="frow">
-            <div class="field"><label>Nom complet *</label><input required name="nom" placeholder="Ex : Tarik Bouich"></div>
-            <div class="field"><label>Téléphone *</label><input required name="tel" inputmode="tel" placeholder="06 XX XX XX XX"></div>
+            <div class="field"><label data-i18n="fm_name">Nom complet *</label><input required name="nom" data-i18n-ph="fm_name_ph" placeholder="Ex : Tarik Bouich"></div>
+            <div class="field"><label data-i18n="fm_tel">Téléphone *</label><input required name="tel" inputmode="tel" data-i18n-ph="fm_tel_ph" placeholder="06 XX XX XX XX"></div>
           </div>
           <div class="frow">
-            <div class="field"><label>Agence souhaitée *</label><select name="agence" id="agenceSelect" required></select></div>
-            <div class="field"><label>Formation *</label><select name="formation" required><option>Permis B — Voiture</option><option>Permis A — Moto</option><option>Permis C / EC — Pro</option><option>Code seul</option><option>Recyclage / Perfectionnement</option><option>Dossier / Équivalence</option></select></div>
+            <div class="field"><label data-i18n="fm_ag">Agence souhaitée *</label><select name="agence" id="agenceSelect" required></select></div>
+            <div class="field"><label data-i18n="fm_f">Formation *</label><select name="formation" id="formationSelect" required><option>Permis B — Voiture</option><option>Permis A — Moto</option><option>Permis C / EC — Pro</option><option>Code seul</option><option>Recyclage / Perfectionnement</option><option>Dossier / Équivalence</option></select></div>
           </div>
-          <div class="field"><label>Message (optionnel)</label><textarea name="message" placeholder="Ex : je veux commencer ce weekend, boîte automatique…"></textarea></div>
-          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane"></i> Être rappelé(e) gratuitement</button>
-          <p id="formOk" style="display:none;margin-top:12px;background:#e8f8ee;border:1px solid #1a8a3a;color:#146c2e;padding:12px;border-radius:12px;font-size:14px;font-weight:600">✅ Merci ! Votre demande est envoyée. On vous appelle très vite. Pour aller plus vite : <a href="https://wa.me/212661000000" style="text-decoration:underline">WhatsApp direct</a>.</p>
+          <div class="field"><label data-i18n="fm_msg">Message (optionnel)</label><textarea name="message" data-i18n-ph="fm_msg_ph" placeholder="Ex : je veux commencer ce weekend, boîte automatique…"></textarea></div>
+          <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center"><i class="fa-solid fa-paper-plane"></i> <span data-i18n="fm_send">Être rappelé(e) gratuitement</span></button>
+          <p id="formOk" style="display:none;margin-top:12px;background:#e8f8ee;border:1px solid #1a8a3a;color:#146c2e;padding:12px;border-radius:12px;font-size:14px;font-weight:600" data-i18n="fm_ok">✅ Merci ! Votre demande est envoyée. On vous appelle très vite. Pour aller plus vite : <a href="https://wa.me/212661000000" style="text-decoration:underline">WhatsApp direct</a>.</p>
         </form>
       </div>
     </div>
@@ -534,9 +590,9 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
       <div>
         <div class="brand" style="margin-bottom:14px">
           <img src="logo.jpg" alt="logo" style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)" onerror="this.style.display='none'">
-          <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small>L'excellence depuis 1990</small></span>
+          <span class="brand-text"><strong>Auto-école <span>TAJ EL IDRISSI</span></strong><small data-i18n="foot_tag">L'excellence depuis 1990</small></span>
         </div>
-        <p style="font-size:14px;max-width:340px">5 agences à Errachidia, Goulmima, Rich, Erfoud & Rissani, 25 moniteurs certifiés, +12 000 permis. Votre réussite est notre couronne 👑</p>
+        <p style="font-size:14px;max-width:340px" data-i18n="foot_d">5 agences à Errachidia, Goulmima, Rich, Erfoud & Rissani, 25 moniteurs certifiés, +12 000 permis. Votre réussite est notre couronne 👑</p>
         <div class="socials">
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -544,11 +600,11 @@ footer{background:#0d0601;color:#cbbd9a;padding:60px 0 0;border-top:3px solid va
           <a href="https://wa.me/212661000000" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
       </div>
-      <div><h4>Formations</h4><a href="#services">Permis B voiture</a><a href="#services">Permis A moto</a><a href="#services">Permis C / EC pro</a><a href="#services">Code de la route</a><a href="#services">Recyclage</a></div>
-      <div><h4>Agences</h4><a href="#agences">Errachidia — Centre</a><a href="#agences">Goulmima — Centre</a><a href="#agences">Rich — Centre</a><a href="#agences">Erfoud — Centre</a><a href="#agences">Rissani — Centre</a></div>
-      <div><h4>Contact</h4><li>📞 05 22 00 00 00</li><li>💬 06 61 00 00 00</li><li>✉️ contact@tajelidrissi.ma</li><li>🕘 Lun–Sam 9h–20h</li></div>
+      <div><h4 data-i18n="foot_f">Formations</h4><a href="#services" data-i18n="foot_f1">Permis B voiture</a><a href="#services" data-i18n="foot_f2">Permis A moto</a><a href="#services" data-i18n="foot_f3">Permis C / EC pro</a><a href="#services" data-i18n="foot_f4">Code de la route</a><a href="#services" data-i18n="foot_f5">Recyclage</a></div>
+      <div><h4 data-i18n="foot_a">Agences</h4><a href="#agences">Errachidia — Centre</a><a href="#agences">Goulmima — Centre</a><a href="#agences">Rich — Centre</a><a href="#agences">Erfoud — Centre</a><a href="#agences">Rissani — Centre</a></div>
+      <div><h4 data-i18n="foot_c">Contact</h4><li>📞 05 22 00 00 00</li><li>💬 06 61 00 00 00</li><li>✉️ contact@tajelidrissi.ma</li><li data-i18n="foot_hours">🕘 Lun–Sam 9h–20h</li></div>
     </div>
-    <div class="foot-bottom"><span>© 2026 Auto-École Taj El Idrissi — Tous droits réservés.</span><span>Conçu avec 👑 à Errachidia, Maroc</span></div>
+    <div class="foot-bottom"><span data-i18n="foot_rights">© 2026 Auto-École Taj El Idrissi — Tous droits réservés.</span><span data-i18n="foot_made">Conçu avec 👑 à Errachidia, Maroc</span></div>
   </div>
 </footer>
 
@@ -570,6 +626,195 @@ const AGENCES = [
   { name:"Agence Erfoud", city:"Erfoud", addr:"22, Avenue Moulay Ismail, Centre — Erfoud", tel:"+212535570404", telLabel:"05 35 57 04 04", wa:"212661570404", resp:"M. Karim Tazi", query:"Avenue Moulay Ismail Erfoud" },
   { name:"Agence Rissani", city:"Rissani", addr:"15, Avenue Sijilmassa, Centre — Rissani", tel:"+212535570505", telLabel:"05 35 57 05 05", wa:"212661570505", resp:"Mme Khadija Amrani", query:"Avenue Sijilmassa Rissani" },
 ];
+
+/* ================= I18N FR / AR ================= */
+const I18N = {
+fr: {
+meta_title:"Auto-École Taj El Idrissi — Permis à Errachidia | 5 Agences Drâa-Tafilalet",
+meta_desc:"Auto-École Taj El Idrissi — Permis B, A, C à Errachidia, Goulmima, Rich, Erfoud & Rissani. Code en Darija & Français, 94% de réussite. Inscrivez-vous en 5 minutes.",
+topbar_agences:"5 agences : Errachidia • Goulmima • Rich • Erfoud • Rissani",
+topbar_hours:"— Ouvert Lun–Sam 9h à 20h",
+brand_sub:"Permis • Code • Conduite",
+nav_home:"Accueil", nav_services:"Services", nav_method:"Méthode", nav_agencies:"Nos 5 Agences", nav_reviews:"Avis", nav_contact:"Contact", nav_cta:"S'inscrire",
+hero_badge:"Inscriptions ouvertes 2026 — Places limitées par agence",
+hero_title:"Votre permis, <em>notre fierté royale.</em>",
+hero_lead:"Rejoignez <strong style=\"color:#fff\">+12 000 élèves</strong> formés avec succès. Code en Darija & Français, moniteurs certifiés, véhicules récents et <strong style=\"color:#fff\">taux de réussite de 94%</strong> à l'examen.",
+hero_cta1:"Réserver ma place", hero_cta2:"Trouver mon agence",
+hero_rate:"4,9/5", hero_reviews:"— 2 300+ avis Google", hero_success:"Réussite au 1er passage", hero_agencies:"Agences au Maroc",
+hero_float1_t:"Permis obtenu !", hero_float1_s:"Tarik B. — Agence Errachidia",
+hero_float2_t:"Prochain créneau", hero_float2_s:"Aujourd'hui 14h30 — 2 places",
+hero_glass1_t:"⏱ 45 jours", hero_glass1_s:"Délai moyen permis B",
+hero_glass2_t:"👨‍🏫 25 moniteurs", hero_glass2_s:"Certifiés & patients",
+svc_eyebrow:"Nos services 2026", svc_title:"Tout pour votre <span>permis, au même endroit</span>",
+svc_sub:"Du code à la conduite, en manuel ou automatique. Formations en français, arabe & darija, avec suivi sur WhatsApp et dossier administratif pris en charge.",
+svc1_t:"Permis B — Voiture", svc1_d:"La formation star : 20h de conduite + code illimité, véhicule manuel ou automatique.",
+svc1_l1:"Code en salle + application 2026", svc1_l2:"20 séances + examen blanc", svc1_l3:"Dossier & examen inclus",
+svc2_t:"Permis A — Moto", svc2_d:"Maîtrisez la moto en toute sécurité avec piste privée et équipement fourni.",
+svc2_l1:"Plateau + circulation", svc2_l2:"Casque & gants fournis", svc2_l3:"Moto école récente",
+svc3_t:"Permis C / EC — Pro", svc3_d:"Devenez chauffeur professionnel : poids lourd, remorque, FIMO & carte conducteur.",
+svc3_l1:"Camion + remorque école", svc3_l2:"Formation pro accélérée", svc3_l3:"Aide à l'emploi",
+svc4_t:"Code de la route", svc4_d:"Cours du soir, weekend & en ligne. Explications en Darija, QCM comme à l'examen.",
+svc4_l1:"Accès app 1 500 questions", svc4_l2:"Examens blancs illimités", svc4_l3:"Cours en Darija / Français",
+svc5_t:"Recyclage & Perfectionnement", svc5_d:"Vous avez le permis mais peur de conduire ? 5 à 10h pour reprendre confiance.",
+svc5_l1:"Parking, autoroute, nuit", svc5_l2:"Moniteur dédié & patient", svc5_l3:"Voiture auto disponible",
+svc6_t:"Dossier & Équivalence", svc6_d:"Renouvellement, duplicata, conversion permis étranger — on s'occupe de tout.",
+svc6_l1:"Suivi administratif complet", svc6_l2:"Visite médicale partenaire", svc6_l3:"Réponse sous 24h",
+from:"À partir de", price_b:"3 500 DH", price_a:"2 800 DH", price_c:"6 500 DH", price_code:"800 DH", price_r:"150 DH / h", price_d:"500 DH", register:"S'inscrire",
+met_eyebrow:"Méthode Taj El Idrissi", met_title:"Permis en main en <span>4 étapes simples</span>",
+met_sub:"Un parcours clair, sans stress, avec un conseiller dédié du premier appel jusqu'au jour de l'examen.",
+step1_t:"Inscription en 5 min", step1_d:"Passez en agence ou sur WhatsApp avec CIN + 2 photos. Facilités de paiement 3× sans frais.",
+step2_t:"Code réussi en 2 semaines", step2_d:"Cours + app avec examens blancs. On vous présente quand vous êtes prêt à 95%.",
+step3_t:"20h de conduite", step3_d:"Créneaux 7j/7 de 8h à 20h, prise à domicile possible, suivi après chaque séance.",
+step4_t:"Examen & permis", step4_d:"Véhicule de l'auto-école le jour J + accompagnement. 94% de réussite au 1er coup.",
+met_glass1_t:"🎓 +12 000", met_glass1_s:"Permis délivrés", met_glass2_t:"⭐ 4,9/5", met_glass2_s:"Satisfaction élèves",
+stat1:"Élèves formés depuis 2010", stat2:"Réussite au 1er passage", stat3:"Moniteurs certifiés", stat4:"Agences au Maroc",
+ag_eyebrow:"Nos 5 agences", ag_title:"Choisissez <span>l'agence la plus proche</span>",
+ag_sub:"Cliquez sur une agence pour voir sa carte, son téléphone, ses horaires et l'itinéraire direct. Toutes les agences proposent les mêmes formations et tarifs.",
+ag_tel:"Téléphone / WhatsApp", ag_hours:"Horaires", ag_hours_v:"Lun – Sam : 9h00 – 20h00<br>Dim : 10h00 – 13h00 (code uniquement)",
+ag_resp:"Responsable", ag_call:"Appeler", ag_dir:"Itinéraire Google Maps",
+ag_note:"⚠️ <strong>Modifiez facilement :</strong> adresses, téléphones et liens maps dans le tableau <code>AGENCES</code> en bas du fichier <code>index.html</code> (cherchez « MODIFIEZ VOS INFOS ICI »).",
+rev_eyebrow:"Ils nous font confiance", rev_title:"+2 300 avis <span>5 étoiles</span>",
+rev1_t:"Code réussi du premier coup grâce aux explications en Darija. Moniteur très patient, je recommande l'agence Errachidia les yeux fermés.",
+rev1_n:"Tarik B. — Permis B", rev1_a:"Agence Errachidia",
+rev2_t:"Après 10 ans sans conduire, 8h de recyclage et j'ai repris la route sereinement. Prise à domicile, tout était parfait.",
+rev2_n:"Yassine E. — Recyclage", rev2_a:"Agence Goulmima",
+rev3_t:"Paiement en 3 fois, dossier géré de A à Z, examen en 40 jours. Le suivi WhatsApp après chaque séance, c'est top.",
+rev3_n:"Khadija M. — Permis B Auto", rev3_a:"Agence Erfoud",
+faq_eyebrow:"Questions fréquentes", faq_title:"Tout ce que vous <span>devez savoir</span>",
+faq1_q:"Quels documents pour s'inscrire ?", faq1_a:"CIN + 2 photos d'identité + certificat médical (nous avons un médecin partenaire à 150 DH). Le contrat et le reçu sont remis immédiatement.",
+faq2_q:"En combien de temps aurai-je mon permis ?", faq2_a:"En moyenne 30 à 45 jours pour le permis B si vous êtes assidu (2–3 séances/semaine). Formule accélérée possible en 3 semaines.",
+faq3_q:"Quels sont les tarifs et facilités de paiement ?", faq3_a:"Permis B dès 3 500 DH, paiement en 3 fois sans frais. Code seul 800 DH. Devis écrit gratuit en agence ou sur WhatsApp.",
+faq4_q:"Proposez-vous la boîte automatique ?", faq4_a:"Oui, dans nos 5 agences. Idéal pour la ville et les personnes stressées. Le permis reste valable pour les deux boîtes selon la réglementation en vigueur.",
+faq5_q:"Puis-je changer d'agence en cours de formation ?", faq5_a:"Oui, gratuitement. Votre dossier et vos heures suivent automatiquement dans nos 5 agences grâce au suivi centralisé.",
+ct_eyebrow:"Inscription 2026", ct_title:"Réservez votre place en <span>2 minutes</span>",
+ct_sub:"Laissez vos coordonnées — un conseiller de l'agence la plus proche vous rappelle sous 1h ouvrée. Ou appelez directement.",
+ct_card_t:"Parlez à un conseiller", ct_card_d:"Devis gratuit, sans engagement. Réponse en français, arabe ou darija.",
+ct_tel_s:"Numéro national — 7j/7 9h-20h", ct_wa_s:"WhatsApp — réponse en 5 min",
+ct_ag:"Voir agences", ct_quote:"Devis WhatsApp",
+ct_hq:"📍 Siège : Boulevard Mohammed VI, Errachidia — RC 123456 • Agrément N° 789/2010",
+fm_t:"Demande de rappel gratuit", fm_d:"On vous rappelle sous 1h ouvrée. Vos données restent confidentielles.",
+fm_name:"Nom complet *", fm_name_ph:"Ex : Tarik Bouich", fm_tel:"Téléphone *", fm_tel_ph:"06 XX XX XX XX",
+fm_ag:"Agence souhaitée *", fm_f:"Formation *", fm_msg:"Message (optionnel)", fm_msg_ph:"Ex : je veux commencer ce weekend, boîte automatique…",
+fm_send:"Être rappelé(e) gratuitement",
+fm_ok:"✅ Merci ! Votre demande est envoyée. On vous appelle très vite. Pour aller plus vite : <a href=\"https://wa.me/212661000000\" style=\"text-decoration:underline\">WhatsApp direct</a>.",
+foot_tag:"L'excellence depuis 1990",
+foot_d:"5 agences à Errachidia, Goulmima, Rich, Erfoud & Rissani, 25 moniteurs certifiés, +12 000 permis. Votre réussite est notre couronne 👑",
+foot_f:"Formations", foot_f1:"Permis B voiture", foot_f2:"Permis A moto", foot_f3:"Permis C / EC pro", foot_f4:"Code de la route", foot_f5:"Recyclage",
+foot_a:"Agences", foot_c:"Contact", foot_hours:"🕘 Lun–Sam 9h–20h",
+foot_rights:"© 2026 Auto-École Taj El Idrissi — Tous droits réservés.", foot_made:"Conçu avec 👑 à Errachidia, Maroc",
+marquee:["Permis B","Code Darija & Français","Boîte Auto","Permis Moto A","Permis Camion C","Recyclage","Paiement 3× sans frais","94% Réussite"],
+formations:["Permis B — Voiture","Permis A — Moto","Permis C / EC — Pro","Code seul","Recyclage / Perfectionnement","Dossier / Équivalence"]
+},
+ar: {
+meta_title:"مدرسة تعليم السياقة تاج الإدريسي — رخصة السياقة في الرشيدية | 5 وكالات درعة تافيلالت",
+meta_desc:"مدرسة تاج الإدريسي لتعليم السياقة — رخص <bdi>B</bdi> و <bdi>A</bdi> و <bdi>C</bdi> في الرشيدية، كلميمة، الريش، أرفود والريصاني. الكود بالدارجة والفرنسية، نسبة نجاح <bdi>94%</bdi>. سجّل في <bdi>5</bdi> دقائق.",
+topbar_agences:"<bdi>5</bdi> وكالات : الرشيدية • كلميمة • الريش • أرفود • الريصاني",
+topbar_hours:"— مفتوح الإثنين–السبت من <bdi>9ص</bdi> إلى <bdi>8م</bdi>",
+brand_sub:"رخصة • كود • سياقة",
+nav_home:"الرئيسية", nav_services:"خدماتنا", nav_method:"منهجيتنا", nav_agencies:"وكالاتنا الخمس", nav_reviews:"آراء", nav_contact:"اتصل بنا", nav_cta:"سجّل الآن",
+hero_badge:"التسجيل مفتوح <bdi>2026</bdi> — أماكن محدودة في كل وكالة",
+hero_title:"رخصتك، <em>فخرنا الملكي.</em>",
+hero_lead:"انضم إلى <strong style=\"color:#fff\"><bdi>+12 000</bdi> تلميذ</strong> نجحوا معنا. الكود بالدارجة والفرنسية، مدربون معتمدون، سيارات حديثة و<strong style=\"color:#fff\">نسبة نجاح <bdi>94%</bdi></strong> في الامتحان.",
+hero_cta1:"احجز مكانك", hero_cta2:"اعثر على وكالتي",
+hero_rate:"<bdi>4,9/5</bdi>", hero_reviews:"— أكثر من <bdi>2 300</bdi> تقييم على <bdi>Google</bdi>", hero_success:"نسبة النجاح من أول مرة", hero_agencies:"وكالات في المغرب",
+hero_float1_t:"تم الحصول على الرخصة !", hero_float1_s:"طارق ب. — وكالة الرشيدية",
+hero_float2_t:"الحصة القادمة", hero_float2_s:"اليوم <bdi>14:30</bdi> — مكانان متبقيان",
+hero_glass1_t:"⏱ <bdi>45</bdi> يوما", hero_glass1_s:"المدة المتوسطة لرخصة <bdi>B</bdi>",
+hero_glass2_t:"👨‍🏫 <bdi>25</bdi> مدربا", hero_glass2_s:"معتمدون وصبورون",
+svc_eyebrow:"خدماتنا <bdi>2026</bdi>", svc_title:"كل ما تحتاجه <span>لرخصتك في مكان واحد</span>",
+svc_sub:"من الكود إلى السياقة، بعلبة يدوية أو أوتوماتيكية. التكوين بالفرنسية والعربية والدارجة، مع متابعة عبر واتساب وتكلف كامل بالملف الإداري.",
+svc1_t:"رخصة <bdi>B</bdi> — سيارة", svc1_d:"التكوين الأكثر طلبا : <bdi>20</bdi> ساعة سياقة + كود غير محدود، سيارة يدوية أو أوتوماتيكية.",
+svc1_l1:"كود في القاعة + تطبيق <bdi>2026</bdi>", svc1_l2:"<bdi>20</bdi> حصة + امتحان تجريبي", svc1_l3:"الملف والامتحان مشمولان",
+svc2_t:"رخصة <bdi>A</bdi> — دراجة نارية", svc2_d:"أتقن الدراجة النارية بأمان مع حلبة خاصة ومعدات متوفرة.",
+svc2_l1:"الحلبة + السير", svc2_l2:"الخوذة والقفازات متوفرة", svc2_l3:"دراجة مدرسة حديثة",
+svc3_t:"رخصة <bdi>C / EC</bdi> — مهنية", svc3_d:"كن سائقا مهنيا : شاحنة ثقيلة، مقطورة، <bdi>FIMO</bdi> وبطاقة السائق.",
+svc3_l1:"شاحنة + مقطورة المدرسة", svc3_l2:"تكوين مهني مكثف", svc3_l3:"مساعدة على التشغيل",
+svc4_t:"قانون السير", svc4_d:"دروس مسائية ونهاية الأسبوع وعن بعد. شروحات بالدارجة وأسئلة مثل الامتحان.",
+svc4_l1:"تطبيق بـ <bdi>1 500</bdi> سؤال", svc4_l2:"امتحانات تجريبية غير محدودة", svc4_l3:"دروس بالدارجة / الفرنسية",
+svc5_t:"إعادة التأهيل", svc5_d:"عندك الرخصة وخايف تسوق ؟ <bdi>5</bdi> إلى <bdi>10</bdi> ساعات لاستعادة الثقة.",
+svc5_l1:"ركن السيارة، الطريق السيار، الليل", svc5_l2:"مدرب خاص وصبور", svc5_l3:"سيارة أوتوماتيكية متوفرة",
+svc6_t:"الملف والمعادلة", svc6_d:"التجديد، النسخة الثانية، تحويل رخصة أجنبية — نتكلف بكلشي.",
+svc6_l1:"تتبع إداري كامل", svc6_l2:"طبيب شريك للفحص", svc6_l3:"جواب في أقل من <bdi>24</bdi> ساعة",
+from:"ابتداء من", price_b:"<bdi>3 500</bdi> درهم", price_a:"<bdi>2 800</bdi> درهم", price_c:"<bdi>6 500</bdi> درهم", price_code:"<bdi>800</bdi> درهم", price_r:"<bdi>150</bdi> درهم / ساعة", price_d:"<bdi>500</bdi> درهم", register:"سجّل",
+met_eyebrow:"منهجية تاج الإدريسي", met_title:"الرخصة في يدك في <span><bdi>4</bdi> خطوات بسيطة</span>",
+met_sub:"مسار واضح بلا توتر، مع مستشار خاص من أول مكالمة حتى يوم الامتحان.",
+step1_t:"التسجيل في <bdi>5</bdi> دقائق", step1_d:"دوز للوكالة أو عبر واتساب مع بطاقة التعريف + صورتان. تسهيلات الدفع <bdi>3</bdi> مرات بدون مصاريف.",
+step2_t:"نجاح الكود في أسبوعين", step2_d:"دروس + تطبيق مع امتحانات تجريبية. ندوزوك ملي توصل لـ <bdi>95%</bdi> جاهزية.",
+step3_t:"<bdi>20</bdi> ساعة سياقة", step3_d:"حصص <bdi>7/7</bdi> من <bdi>8ص</bdi> إلى <bdi>8م</bdi>، إمكانية الحضور للدار، وتتبع بعد كل حصة.",
+step4_t:"الامتحان والرخصة", step4_d:"سيارة المدرسة يوم الامتحان + مرافقة. <bdi>94%</bdi> نسبة النجاح من أول مرة.",
+met_glass1_t:"🎓 <bdi>+12 000</bdi>", met_glass1_s:"رخصة تم تسليمها", met_glass2_t:"⭐ <bdi>4,9/5</bdi>", met_glass2_s:"رضا التلاميذ",
+stat1:"تلميذ تكوّن منذ <bdi>2010</bdi>", stat2:"نسبة النجاح من أول مرة", stat3:"مدربون معتمدون", stat4:"وكالات في المغرب",
+ag_eyebrow:"وكالاتنا الخمس", ag_title:"اختر <span>أقرب وكالة إليك</span>",
+ag_sub:"اضغط على وكالة لرؤية الخريطة والهاتف والأوقات والاتجاهات. جميع الوكالات تقدم نفس التكوينات والأثمنة.",
+ag_tel:"الهاتف / واتساب", ag_hours:"أوقات العمل", ag_hours_v:"الإثنين – السبت : <bdi>9:00 – 20:00</bdi><br>الأحد : <bdi>10:00 – 13:00</bdi> (الكود فقط)",
+ag_resp:"المسؤول", ag_call:"اتصل", ag_dir:"الاتجاهات عبر <bdi>Google Maps</bdi>",
+ag_note:"⚠️ <strong>عدّل بسهولة :</strong> العناوين والهواتف وروابط الخرائط في جدول <bdi><code>AGENCES</code></bdi> أسفل ملف <bdi><code>index.html</code></bdi> (ابحث عن « <bdi>MODIFIEZ VOS INFOS ICI</bdi> »).",
+rev_eyebrow:"يثقون بنا", rev_title:"<bdi>+2 300</bdi> تقييم <span><bdi>5</bdi> نجوم</span>",
+rev1_t:"نجحت في الكود من أول مرة بفضل الشروحات بالدارجة. مدرب صبور جدا، أنصح بوكالة الرشيدية بلا تردد.",
+rev1_n:"طارق ب. — رخصة <bdi>B</bdi>", rev1_a:"وكالة الرشيدية",
+rev2_t:"بعد <bdi>10</bdi> سنوات بلا سياقة، <bdi>8</bdi> ساعات إعادة تأهيل ورجعت للطريق بثقة. الحضور للدار، كلشي كان ممتازا.",
+rev2_n:"ياسين أ. — إعادة تأهيل", rev2_a:"وكالة كلميمة",
+rev3_t:"الدفع على <bdi>3</bdi> مرات، الملف من الألف إلى الياء، الامتحان في <bdi>40</bdi> يوما. التتبع عبر واتساب بعد كل حصة رائع.",
+rev3_n:"خديجة م. — رخصة <bdi>B</bdi> أوتوماتيك", rev3_a:"وكالة أرفود",
+faq_eyebrow:"أسئلة شائعة", faq_title:"كل ما تحتاج <span>معرفته</span>",
+faq1_q:"ما الوثائق اللازمة للتسجيل ؟", faq1_a:"بطاقة التعريف + صورتان + شهادة طبية (عندنا طبيب شريك بـ <bdi>150 درهم</bdi>). العقد والوصل يُسلمان فورا.",
+faq2_q:"في كم من الوقت سأحصل على رخصتي ؟", faq2_a:"في المتوسط <bdi>30</bdi> إلى <bdi>45</bdi> يوما لرخصة <bdi>B</bdi> إذا كنت مواظبا (<bdi>2–3</bdi> حصص أسبوعيا). صيغة مكثفة ممكنة في <bdi>3</bdi> أسابيع.",
+faq3_q:"ما الأثمنة وتسهيلات الدفع ؟", faq3_a:"رخصة <bdi>B</bdi> ابتداء من <bdi>3 500 درهم</bdi>، الدفع على <bdi>3</bdi> مرات بدون مصاريف. الكود وحده <bdi>800 درهم</bdi>. عرض ثمن مكتوب مجاني في الوكالة أو واتساب.",
+faq4_q:"هل توفرون علبة أوتوماتيكية ؟", faq4_a:"نعم، في وكالاتنا الخمس. مثالية للمدينة وللأشخاص المتوترين. الرخصة تبقى صالحة حسب القوانين الجاري بها العمل.",
+faq5_q:"هل يمكنني تغيير الوكالة أثناء التكوين ؟", faq5_a:"نعم، مجانا. الملف والساعات يتبعانك تلقائيا في وكالاتنا الخمس بفضل التتبع المركزي.",
+ct_eyebrow:"التسجيل <bdi>2026</bdi>", ct_title:"احجز مكانك في <span>دقيقتين</span>",
+ct_sub:"خلّي معلوماتك — مستشار من أقرب وكالة يعاود يتصل بك في أقل من ساعة عمل. أو اتصل مباشرة.",
+ct_card_t:"تحدث مع مستشار", ct_card_d:"عرض ثمن مجاني بلا التزام. الجواب بالفرنسية أو العربية أو الدارجة.",
+ct_tel_s:"الرقم الوطني — <bdi>7/7</bdi> من <bdi>9ص-8م</bdi>", ct_wa_s:"واتساب — جواب في <bdi>5</bdi> دقائق",
+ct_ag:"شاهد الوكالات", ct_quote:"عرض ثمن عبر واتساب",
+ct_hq:"📍 المقر : شارع محمد السادس، الرشيدية — السجل التجاري <bdi>123456</bdi> • الاعتماد رقم <bdi>789/2010</bdi>",
+fm_t:"طلب معاودة الاتصال مجانا", fm_d:"نعاودو نتصلو بك في أقل من ساعة عمل. معلوماتك تبقى سرية.",
+fm_name:"الاسم الكامل *", fm_name_ph:"مثال : طارق بوعيش", fm_tel:"الهاتف *", fm_tel_ph:"06 XX XX XX XX",
+fm_ag:"الوكالة المرغوبة *", fm_f:"التكوين *", fm_msg:"رسالة (اختيارية)", fm_msg_ph:"مثال : بغيت نبدا هاد الويكاند، علبة أوتوماتيكية…",
+fm_send:"عاود اتصل بيا مجانا",
+fm_ok:"✅ شكرا ! تم إرسال طلبك. سنتصل بك قريبا. للسرعة : <a href=\"https://wa.me/212661000000\" style=\"text-decoration:underline\">واتساب مباشر</a>.",
+foot_tag:"التميز منذ <bdi>1990</bdi>",
+foot_d:"<bdi>5</bdi> وكالات في الرشيدية، كلميمة، الريش، أرفود والريصاني، <bdi>25</bdi> مدربا معتمدا، <bdi>+12 000</bdi> رخصة. نجاحك هو تاجنا 👑",
+foot_f:"التكوينات", foot_f1:"رخصة <bdi>B</bdi> سيارة", foot_f2:"رخصة <bdi>A</bdi> دراجة", foot_f3:"رخصة <bdi>C / EC</bdi> مهنية", foot_f4:"قانون السير", foot_f5:"إعادة التأهيل",
+foot_a:"الوكالات", foot_c:"اتصل بنا", foot_hours:"🕘 الإثنين–السبت <bdi>9ص–8م</bdi>",
+foot_rights:"© <bdi>2026</bdi> مدرسة تاج الإدريسي — جميع الحقوق محفوظة.", foot_made:"صُنع بـ 👑 في الرشيدية، المغرب",
+marquee:["رخصة <bdi>B</bdi>","الكود بالدارجة والفرنسية","علبة أوتوماتيكية","رخصة الدراجة <bdi>A</bdi>","رخصة الشاحنة <bdi>C</bdi>","إعادة التأهيل","الدفع <bdi>3</bdi> مرات بدون مصاريف","<bdi>94%</bdi> نجاح"],
+formations:["رخصة ⁦B⁩ — سيارة","رخصة ⁦A⁩ — دراجة نارية","رخصة ⁦C / EC⁩ — مهنية","الكود وحده","إعادة التأهيل / التجويد","الملف / المعادلة"]
+}
+};
+let LANG = localStorage.getItem("taj-lang") || "fr";
+function renderMarquee(){
+  const items = (I18N[LANG] && I18N[LANG].marquee) || I18N.fr.marquee;
+  document.getElementById("marquee").innerHTML = [...items,...items].map(t=>`<span>👑 ${t}</span>`).join("");
+}
+function renderFormations(){
+  const list = (I18N[LANG] && I18N[LANG].formations) || I18N.fr.formations;
+  const sel = document.getElementById("formationSelect");
+  if(sel) sel.innerHTML = list.map(f=>`<option>${f}</option>`).join("");
+}
+function setLang(l){
+  LANG = (l === "ar") ? "ar" : "fr";
+  localStorage.setItem("taj-lang", LANG);
+  document.documentElement.lang = LANG;
+  document.documentElement.dir = LANG === "ar" ? "rtl" : "ltr";
+  const dict = I18N[LANG];
+  document.title = dict.meta_title;
+  const md = document.querySelector('meta[name="description"]');
+  if(md) md.setAttribute("content", dict.meta_desc);
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const k = el.getAttribute("data-i18n");
+    if(dict[k] !== undefined) el.innerHTML = dict[k];
+    else if(I18N.fr[k] !== undefined) el.innerHTML = I18N.fr[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const k = el.getAttribute("data-i18n-ph");
+    if(dict[k] !== undefined) el.setAttribute("placeholder", dict[k]);
+  });
+  document.querySelectorAll("[data-lang-btn]").forEach(b=>b.classList.toggle("active", b.getAttribute("data-lang-btn") === LANG));
+  renderMarquee();
+  renderFormations();
+}
+document.querySelectorAll("[data-lang-btn]").forEach(b=>b.addEventListener("click", ()=>setLang(b.getAttribute("data-lang-btn"))));
 
 const tabsEl = document.getElementById('tabs');
 const gridEl = document.getElementById('allGrid');
@@ -599,18 +844,25 @@ function render(){
 }
 render();
 
-// Marquee
-const items = ["Permis B","Code Darija & Français","Boîte Auto","Permis Moto A","Permis Camion C","Recyclage","Paiement 3× sans frais","94% Réussite"];
-document.getElementById('marquee').innerHTML = [...items,...items].map(t=>`<span>👑 ${t}</span>`).join('');
+// Marquee (i18n)
+renderMarquee();
 
 // Loader
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),600));
 setTimeout(()=>document.getElementById('loader').classList.add('hide'),2500);
 
-// Burger
-const burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks');
-burger.onclick=()=>navLinks.classList.toggle('open');
-navLinks.querySelectorAll('a').forEach(a=>a.onclick=()=>navLinks.classList.remove('open'));
+// Burger + mobile drawer
+const burger=document.getElementById('burger'), navLinks=document.getElementById('navLinks'), navScrim=document.getElementById('navScrim');
+function setMenu(open){
+  navLinks.classList.toggle('open',open);
+  navScrim.classList.toggle('show',open);
+  document.body.classList.toggle('menu-open',open);
+  burger.innerHTML = open ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+}
+burger.onclick=()=>setMenu(!navLinks.classList.contains('open'));
+navScrim.onclick=()=>setMenu(false);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') setMenu(false); });
+navLinks.querySelectorAll('a').forEach(a=>a.onclick=()=>setMenu(false));
 
 // Reveal on scroll
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});
@@ -620,7 +872,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const cio=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting) return; cio.unobserve(e.target);
   const el=e.target, end=+el.dataset.count, t0=performance.now(), dur=1600;
-  (function tick(t){const p=Math.min((t-t0)/dur,1), v=Math.floor(end*(1-Math.pow(1-p,3))); el.textContent=v.toLocaleString('fr-FR'); if(p<1) requestAnimationFrame(tick);})(t0);
+  (function tick(t){const p=Math.min((t-t0)/dur,1), v=Math.floor(end*(1-Math.pow(1-p,3))); el.textContent=v.toLocaleString(LANG==='ar'?'ar-MA':'fr-FR'); if(p<1) requestAnimationFrame(tick);})(t0);
 }),{threshold:.6});
 document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
 
@@ -642,6 +894,10 @@ document.getElementById('leadForm').addEventListener('submit',e=>{
   document.getElementById('formOk').style.display='block';
   window.open('https://wa.me/212661000000?text='+msg,'_blank');
 });
+
+// Init saved language (render formations + marquee + texts)
+renderFormations();
+setLang(LANG);
 </script>
 </body>
 </html>
